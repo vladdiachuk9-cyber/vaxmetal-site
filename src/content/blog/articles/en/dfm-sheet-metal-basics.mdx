@@ -1,0 +1,37 @@
+---
+key: "dfm-sheet-metal-basics"
+slug: "design-for-manufacturability-sheet-metal-basics"
+title: "Design for Manufacturability: Sheet Metal Basics"
+description: "The DFM fundamentals that determine whether a sheet metal part is cheap and fast to make, or a source of rework: bend radius, hole placement, and material choice."
+cluster: "engineering-dfm"
+targetKeyword: "dfm sheet metal"
+publishedDate: "2026-05-06"
+---
+
+Most sheet metal cost overruns trace back to the same handful of design decisions, made before the drawing ever reaches a shop floor. None of them require CAD expertise to avoid — just knowing what a laser, a press brake, and a welder actually need from a drawing.
+
+## Keep bend radius consistent, and don't go tighter than the material allows
+
+Every material and thickness has a practical minimum bend radius — go tighter and the part risks cracking on the outer surface of the bend, or the brake simply can't form it cleanly. Aluminum needs a more generous minimum radius than mild steel at the same thickness because it's less ductile. Using one consistent bend radius across a part (rather than a different one per bend) also means one tool setup instead of several, which shows up directly in cost.
+
+## Keep holes and cutouts away from bend lines
+
+A hole placed too close to a bend distorts when the part folds — the hole itself deforms, or the material around it tears. As a rule of thumb, keep hole edges at least 2–3 times the material thickness away from a bend line. If a hole needs to sit close to a bend for functional reasons, say so on the drawing so the sequence (cut, then bend, then finish the hole) can be planned around it rather than discovered mid-run.
+
+## Don't over-specify tolerance
+
+Laser cutting typically holds around ±0.1 mm on its own. Bending adds angular tolerance on top of that — commonly ±0.5° unless tooling and process are tightly controlled. If a drawing calls out ±0.05 mm on a bent dimension without saying why, that's usually either a copy-paste from a machined-part template, or a genuine functional requirement that changes how the part has to be made (and quoted). Flagging which dimensions are actually functional — mate with another part, carry a load, seal against something — versus which are just "as accurate as reasonably achievable" is the single fastest way to bring a quote down without changing the part's function.
+
+## Design for the process you'll actually get
+
+A part that's cut, bent, and welded in one shop can be designed with that sequence in mind — tabs and slots that self-locate parts before welding, consistent bend allowances because the same shop cuts and bends, relief cuts at corners so bends don't tear. A part designed in isolation, then handed to whichever vendor wins the quote, usually can't assume any of that, and ends up over-toleranced defensively.
+
+## A short pre-flight list before sending a drawing
+
+- Is bend radius consistent, and appropriate for the material and thickness?
+- Are holes and cutouts clear of bend lines by at least 2–3x material thickness?
+- Which dimensions are functional, and which are cosmetic or "reasonable default"?
+- Does the drawing note the intended finish (and does it affect which dimensions matter)?
+- If the part is a welded assembly, are mating features designed to self-locate before welding?
+
+We review every incoming drawing for manufacturability before quoting — see our [sheet metal & bending page](/en/services/sheet-metal-bending) for material-specific thickness and tolerance ranges, or [upload a drawing](/en#rfq) for a DFM review.

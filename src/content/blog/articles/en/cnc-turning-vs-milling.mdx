@@ -1,0 +1,41 @@
+---
+key: "cnc-turning-vs-milling"
+slug: "cnc-turning-vs-milling"
+title: "CNC Turning vs Milling: Which Process Fits Your Part?"
+description: "A practical guide to choosing between CNC turning and CNC milling, with tolerance ranges, typical part geometries, and when you need both."
+cluster: "cnc"
+targetKeyword: "cnc turning vs milling"
+publishedDate: "2026-03-10"
+---
+
+If your part is round, it probably needs turning. If it isn't, it probably needs milling. That one-line rule gets you 80% of the way there — but the remaining 20% is where quoting mistakes and delays come from.
+
+## What CNC turning actually does
+
+A lathe spins the workpiece against a stationary cutting tool. That makes turning the right process for anything that's rotationally symmetric: shafts, bushings, spindles, pins, sleeves, and threaded fittings. The part rotates; the tool moves along and across it.
+
+Turning is fast and efficient for round stock because material removal happens continuously as the part spins — there's no repositioning between cuts the way there often is in milling. On a modern CNC lathe, achievable tolerances typically fall in the IT7–IT9 range (roughly ±0.02–0.05 mm), depending on diameter, material, and how many operations the part needs.
+
+## What CNC milling actually does
+
+A rotating cutting tool moves against a stationary (or indexed) workpiece. Milling is the right call for anything with flat faces, pockets, slots, angled surfaces, or holes that aren't on the part's rotational axis: brackets, housings, plates, and machined faces on otherwise-welded assemblies.
+
+Multi-axis milling centers can also produce features that look "round" — a bolt circle, a bore — but the part itself doesn't need to spin to make them. That distinction matters for quoting: a bracket with a few precision bores is a milling job, not a turning job, even though it has round features.
+
+## Where the two overlap
+
+Some parts need both. A shaft with a milled keyway or a flat is turned first, then moved to a milling center for the flat. A turned bushing that needs a cross-drilled hole is the same story. This is normal, and it's one of the reasons full-cycle shops that run both processes in-house — rather than splitting the job across two vendors — tend to quote faster and hold tolerance better: the part doesn't lose its reference datum crossing a shop boundary.
+
+## A quick decision table
+
+| If the part is mostly... | Use | Typical achievable tolerance |
+|---|---|---|
+| Rotationally symmetric (shafts, bushings, spindles) | Turning | IT7–IT9 (≈ ±0.02–0.05 mm) |
+| Flat faces, pockets, brackets, housings | Milling | ±0.02–0.05 mm |
+| Both (turned body + milled feature) | Turning then milling | Set by the tighter of the two operations |
+
+## What this means for your RFQ
+
+When you send a drawing, note which features are functional (mate with another part, carry a bearing, seal against something) versus cosmetic. That's what actually drives which tolerances get held tightly and which get relaxed — and it's the single biggest lever for controlling machining cost on a mixed turned/milled part.
+
+We run five HAAS turning centers and five HAAS milling centers in the same shop, specifically so a part that needs both doesn't have to travel. See our [CNC turning](/en/services/cnc-turning) and [CNC milling](/en/services/cnc-milling) pages for material-specific tolerance notes, or [request a quote](/en#rfq) directly with your drawing.

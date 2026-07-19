@@ -1,0 +1,333 @@
+{
+  "meta": {
+    "homeTitle": "Full-Cycle Contract Manufacturing — Engineering to Finished Product",
+    "homeDescription": "Laser cutting, CNC turning & milling, welding, powder coating and assembly under one roof in Ukraine. Quotes in 24-48h, EU delivery in 3-7 days, priced 25-35% below Western European workshops."
+  },
+  "nav": {
+    "services": "Services",
+    "industries": "Industries",
+    "blog": "Blog",
+    "process": "Process",
+    "about": "Why Us",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "requestQuote": "Request a Quote",
+    "uploadDrawing": "Upload Drawing"
+  },
+  "hero": {
+    "eyebrow": "Contract manufacturing, Ukraine → EU",
+    "headline": "Full-Cycle Contract Manufacturing — Engineering to Finished Product",
+    "subhead": "Laser cutting, CNC turning & milling, welding, powder coating and assembly under one roof. We take on the welded assemblies, painted parts and finished sub-systems that overloaded EU workshops and digital cutting platforms can't — priced 25–35% below German quotes, delivered DAP in 3–7 days.",
+    "ctaPrimary": "Request a Quote",
+    "ctaSecondary": "Upload a Drawing",
+    "microcopy": "STEP, DWG, DXF or PDF · Reply within 24-48h"
+  },
+  "trustBar": {
+    "title": "What's actually on our shop floor",
+    "items": [
+      { "label": "HAAS CNC turning centers", "value": "5" },
+      { "label": "HAAS CNC milling centers", "value": "5" },
+      { "label": "In-house laser cutting, bending & welding", "value": "" },
+      { "label": "EU delivery (DCFTA, duty-free)", "value": "3–7 days" }
+    ],
+    "certNote": "ISO 9001 & ISO 3834 certification in progress. TODO_VERIFY: certificate numbers and completion date once issued."
+  },
+  "services": {
+    "title": "One shop, the whole process",
+    "subtitle": "Cutting, forming, welding, finishing and assembly under one roof — no hand-offs between subcontractors.",
+    "items": [
+      {
+        "name": "Contract Manufacturing for OEMs",
+        "description": "Welded sub-assemblies, brackets, frames and enclosures for machinery OEMs and integrators — the overflow work that busy German and Polish workshops subcontract out."
+      },
+      {
+        "name": "Laser Cutting",
+        "description": "Sheet steel, stainless and aluminum cutting with tight tolerances, ready for bending or welding the same day."
+      },
+      {
+        "name": "CNC Turning",
+        "description": "5x HAAS turning centers for shafts, bushings and rotationally symmetric parts in steel, stainless and aluminum."
+      },
+      {
+        "name": "CNC Milling",
+        "description": "5x HAAS milling centers for brackets, housings and precision machined components."
+      },
+      {
+        "name": "Sheet Metal & Bending",
+        "description": "CNC press brake forming, matched to laser-cut blanks for consistent, repeatable folds."
+      },
+      {
+        "name": "Welding",
+        "description": "TIG, laser, MIG/MAG and spot welding — the step most cutting-only platforms can't offer, and where our margin (and your value) is."
+      },
+      {
+        "name": "Powder Coating",
+        "description": "In-house finishing so parts leave ready to install, not ready for a second subcontractor."
+      },
+      {
+        "name": "Assembly & Packaging",
+        "description": "Sub-assembly, quality control and export packaging — you receive a finished unit, not a bag of parts."
+      }
+    ]
+  },
+  "tracks": {
+    "title": "What we build, beyond one-off parts",
+    "subtitle": "Four product tracks built on manufacturing capability we already have in daily production, plus contract furniture as a second-wave line.",
+    "items": [
+      {
+        "tag": "Track A",
+        "name": "Trailer & Truck Body Parts",
+        "description": "Drawbars, chassis brackets, tool boxes, mudguards and ramps in steel and aluminum for EU trailer and truck-body manufacturers. Series of 500–5,000 units — too small for large-volume producers, too custom for mass import.",
+        "customers": "Trailer OEMs, truck body builders, distributors in DE / PL / NL"
+      },
+      {
+        "tag": "Track B",
+        "name": "Telescopic Masts",
+        "description": "Welded and machined mast sections and mounting hardware for mobile surveillance towers, temporary telecom sites, event technology and perimeter security integrators — a mid-market alternative to premium mast brands, already in production.",
+        "customers": "CCTV tower operators, telecom contractors, security & defense integrators"
+      },
+      {
+        "tag": "Track C",
+        "name": "Robotics & UGV Chassis",
+        "description": "Welded frames, enclosures and sub-assemblies for robotics OEMs and ground-vehicle integrators who need fast iteration on small welded series — 20 to 200 units — without tying up their own shop.",
+        "customers": "Robotics startups, industrial AMR builders, ground-vehicle integrators"
+      },
+      {
+        "tag": "Track D",
+        "name": "Fire & Emergency Equipment",
+        "description": "Exterior storage cabinets, hose and sand boxes, and vehicle outfitting for fire-equipment distributors and emergency vehicle body builders — outside the segments that require internal-storage safety certification.",
+        "customers": "Fire equipment distributors, emergency vehicle outfitters"
+      },
+      {
+        "tag": "Wave 2",
+        "name": "Metal + Wood Furniture",
+        "description": "White-label contract furniture combining our metal frames with partner woodworking — loft-style, outdoor and HoReCa pieces in small-to-mid series.",
+        "customers": "Contract furniture brands, HoReCa fit-out companies"
+      }
+    ]
+  },
+  "process": {
+    "title": "From drawing to delivery",
+    "steps": [
+      { "step": "1", "name": "RFQ & DFM review", "description": "Send a drawing or describe the part. We review manufacturability within 24-48h." },
+      { "step": "2", "name": "Engineering & quotation", "description": "Fixed quote with lead time, based on material, tolerance and finish." },
+      { "step": "3", "name": "Cutting & forming", "description": "Laser cutting and CNC press brake bending of blanks." },
+      { "step": "4", "name": "CNC turning & milling", "description": "Precision machining on HAAS turning and milling centers." },
+      { "step": "5", "name": "Welding & assembly", "description": "TIG, laser, MIG/MAG or spot welding, then sub-assembly." },
+      { "step": "6", "name": "Powder coating", "description": "In-house finishing to your spec." },
+      { "step": "7", "name": "QC & packaging", "description": "Dimensional inspection and export packaging." },
+      { "step": "8", "name": "DAP delivery", "description": "Duty-free delivery to the EU in 3-7 days under DCFTA." }
+    ]
+  },
+  "whyUs": {
+    "title": "Why manufacturers overflow to us",
+    "items": [
+      {
+        "name": "One shop, not three subcontractors",
+        "description": "Cutting, welding, finishing and assembly in one place. No hand-off delays, no quality gaps between vendors."
+      },
+      {
+        "name": "In-house engineering bureau",
+        "description": "We can develop a part from a sketch, not just cut what's already on your drawing — ODM and white-label capability included."
+      },
+      {
+        "name": "Priced below Western European quotes",
+        "description": "25–35% below German shop rates, 15–25% below Polish — without cutting corners on the finished result."
+      },
+      {
+        "name": "Duty-free, fast EU delivery",
+        "description": "DCFTA gives zero-duty access to the EU; trucking puts parts on your dock in 3-7 days."
+      },
+      {
+        "name": "Free capacity, not a backlog",
+        "description": "While EU workshops are short more than 300,000 certified welders and turning away work, we have open capacity now."
+      },
+      {
+        "name": "Series that don't interest bigger players",
+        "description": "100–5,000 unit runs — too small for large industrial producers, too custom for typical Asian minimum order quantities."
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "Equipment on the floor",
+    "subtitle": "Real capacity, stated plainly — no invented certifications or headcounts.",
+    "items": [
+      { "name": "CNC Turning Centers", "detail": "5x HAAS — shafts, bushings, rotationally symmetric parts" },
+      { "name": "CNC Milling Centers", "detail": "5x HAAS — brackets, housings, precision components" },
+      { "name": "Laser Cutting", "detail": "Sheet steel, stainless steel, aluminum" },
+      { "name": "CNC Press Brake", "detail": "Bending and forming of laser-cut blanks" },
+      { "name": "Welding", "detail": "TIG, laser, MIG/MAG, spot welding" },
+      { "name": "Gear Cutting", "detail": "In-house gear production" },
+      { "name": "Powder Coating", "detail": "In-house finishing line" },
+      { "name": "Assembly, QC & Packaging", "detail": "Sub-assembly through export-ready packaging" }
+    ],
+    "photoPlaceholderNote": "TODO: replace equipment illustrations with real shop-floor photography"
+  },
+  "quality": {
+    "title": "Quality control, at every step",
+    "items": [
+      { "name": "Incoming inspection", "description": "Material certificates and dimensional checks before a batch enters production." },
+      { "name": "In-process checks", "description": "Dimensional verification after cutting, machining and welding — not only at the end of the line." },
+      { "name": "Final inspection", "description": "Full dimensional check against drawing tolerances before painting and packaging." },
+      { "name": "Export documentation", "description": "Packing lists, certificates of conformity and export packaging suited to sea or road freight." }
+    ]
+  },
+  "leadMagnet": {
+    "title": "Capability Statement (PDF, EN)",
+    "subtitle": "Equipment, processes and pricing position in one 2-page sheet.",
+    "nameLabel": "Name (optional)",
+    "emailLabel": "Email",
+    "cta": "Download",
+    "submitting": "Preparing…",
+    "successBody": "Downloaded — check your downloads folder.",
+    "errorBody": "Couldn't generate the file. Please try again."
+  },
+  "gallery": {
+    "title": "The shop floor",
+    "subtitle": "Illustrative photos for now — real shop-floor photography is on its way.",
+    "tourCta": "Take the interactive factory tour",
+    "items": [
+      { "label": "5x HAAS CNC turning centers", "alt": "CNC turning center machining a steel shaft — precision contract manufacturing" },
+      { "label": "5x HAAS CNC milling centers", "alt": "CNC milling center cutting metal with coolant spray — precision contract machining" },
+      { "label": "Laser cutting line", "alt": "Fiber laser cutting steel sheet with sparks — precision sheet metal fabrication" },
+      { "label": "CNC press brake bending", "alt": "CNC press brake bending sheet metal — sheet metal forming" },
+      { "label": "TIG welding", "alt": "TIG welding of stainless steel with argon shielding — precision welded assemblies" },
+      { "label": "MIG/MAG welding", "alt": "MIG/MAG welding of a steel assembly with sparks — structural fabrication" },
+      { "label": "Powder coating line", "alt": "Powder coating application on metal parts — durable protective finish" },
+      { "label": "Assembly & QC area", "alt": "Quality inspector measuring a metal part with a digital micrometer — dimensional quality control" },
+      { "label": "Export packaging", "alt": "Packaged goods ready for international shipping — export-ready packaging" }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "question": "What is your typical lead time for EU orders?",
+        "answer": "Delivery to the EU takes 3-7 days DAP once production is complete, under DCFTA duty-free access. Production lead time depends on complexity — typically 2-4 weeks for a first order, faster on repeat series."
+      },
+      {
+        "question": "Are you ISO certified?",
+        "answer": "ISO 9001 and ISO 3834 certification is in progress. Until certification is complete, we take on orders in segments that don't require it — machine parts, brackets, enclosures and sub-assemblies. TODO_VERIFY: update with certificate numbers once issued."
+      },
+      {
+        "question": "What order quantities do you accept?",
+        "answer": "We're built for series of 100-5,000 units — large enough to matter, small enough that bigger producers and typical Asian minimum order quantities don't fit."
+      },
+      {
+        "question": "Can you develop a part or product from scratch?",
+        "answer": "Yes. Our in-house engineering bureau can design a part or product from a sketch or requirement, including ODM and white-label production under your brand."
+      },
+      {
+        "question": "What materials do you work with?",
+        "answer": "Steel and stainless steel across all price segments. Aluminum is available, positioned for higher-value parts, since Ukraine has no primary aluminum smelting and raw material is sourced internationally."
+      },
+      {
+        "question": "What are your payment terms and Incoterms?",
+        "answer": "New clients: 30-50% prepayment, invoicing in EUR, DAP Incoterms. A video audit of the shop floor is available on request."
+      }
+    ]
+  },
+  "estimator": {
+    "title": "Get an indicative estimate",
+    "subtitle": "Upload a drawing and tell us material, quantity and finish. This is a preliminary range, not a binding quote.",
+    "quickEstimateTitle": "Quick price range",
+    "quickEstimateSubtitle": "A rough, rule-based range — not geometry-aware. For a firm number, use the full form below.",
+    "getEstimateCta": "Calculate estimate",
+    "perUnit": "per unit",
+    "leadTimeLabel": "Estimated lead time",
+    "disclaimer": "Preliminary estimate. Final quotation issued after engineering review.",
+    "calc": {
+      "materialSourceLabel": "Material source",
+      "ownMaterial": "We supply the material",
+      "customerSupplied": "You supply the material",
+      "materialLabel": "Material",
+      "materialSteel": "Steel",
+      "materialStainless": "Stainless steel",
+      "materialAluminum": "Aluminum",
+      "materialBrass": "Brass",
+      "weightLabel": "Weight per unit (kg)",
+      "quantityLabel": "Quantity",
+      "processesLabel": "Processes",
+      "processesHint": "Select every process this part needs.",
+      "laser": "Laser cutting",
+      "laserMaterialLabel": "Material to cut",
+      "cutLengthLabel": "Cut length per unit (m)",
+      "pierceCountLabel": "Pierce points per unit",
+      "cnc": "CNC machining",
+      "modeLabel": "Mode",
+      "modeTurning": "Turning",
+      "modeMilling": "Milling (3-axis)",
+      "modeMilling5axis": "Milling (4/5-axis)",
+      "machineHoursLabel": "Machine hours per unit",
+      "weldSeam": "Seam welding",
+      "methodLabel": "Method",
+      "methodTig": "TIG",
+      "methodMig": "MIG/MAG",
+      "methodLaser": "Laser",
+      "seamLengthLabel": "Seam length per unit (cm)",
+      "thicknessLabel": "Material thickness",
+      "weldSpot": "Spot welding",
+      "spotCountLabel": "Spot welds per unit",
+      "powder": "Powder coating",
+      "areaLabel": "Surface area per unit (m²)",
+      "bend": "Bending",
+      "bendCountLabel": "Bends per unit",
+      "rushLabel": "Rush order (+30%)",
+      "complexityLabel": "Job complexity",
+      "complexitySimple": "Simple",
+      "complexityStandard": "Standard",
+      "complexityComplex": "Complex",
+      "calculate": "Calculate",
+      "calculating": "Calculating…",
+      "totalRange": "Total order (indicative)",
+      "perUnitRange": "Per unit",
+      "leadTime": "Estimated lead time",
+      "days": "working days",
+      "breakdownTitle": "Cost breakdown",
+      "materialCostLabel": "Material",
+      "labourCostLabel": "Labour",
+      "setupCostLabel": "Setup",
+      "volumeDiscountLabel": "Volume discount",
+      "rushSurchargeLabel": "Rush surcharge",
+      "marginLabel": "Margin",
+      "selectProcessError": "Select at least one process."
+    },
+    "uploadLabel": "Upload STEP, STP, DXF, DWG, PDF or ZIP (max 50MB)",
+    "materialLabel": "Material",
+    "quantityLabel": "Quantity",
+    "finishLabel": "Finish",
+    "toleranceLabel": "Tolerance (optional)",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "companyLabel": "Company",
+    "messageLabel": "Additional notes",
+    "consentLabel": "I agree to be contacted about this request and to the processing of the data above.",
+    "submit": "Send request",
+    "submitting": "Sending…",
+    "successTitle": "Request received",
+    "successBody": "A manufacturing engineer will review your file and confirm a firm quote within 24h.",
+    "errorBody": "Something went wrong sending your request. Please try again or email us directly."
+  },
+  "finalCta": {
+    "title": "Get an engineering quote in 24–48 hours",
+    "subtitle": "Send a drawing or describe the part — no obligation.",
+    "ctaPrimary": "Request a Quote",
+    "ctaSecondary": "Book a Call"
+  },
+  "factoryTour": {
+    "hint": "Click a station to see what happens there.",
+    "close": "Close",
+    "viewService": "View this service",
+    "emptyState": "Select a station to see details."
+  },
+  "footer": {
+    "tagline": "Full-cycle contract manufacturing, Ukraine to the EU.",
+    "servicesTitle": "Services",
+    "industriesTitle": "Industries",
+    "companyTitle": "Company",
+    "contactTitle": "Contact",
+    "languagesLabel": "Language",
+    "rightsReserved": "All rights reserved.",
+    "verifyNote": "Contact details on this site are placeholders pending owner sign-off (TODO_VERIFY)."
+  }
+}
