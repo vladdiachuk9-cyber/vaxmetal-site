@@ -228,8 +228,8 @@
     ]
   },
   "estimator": {
-    "title": "Get an indicative estimate",
-    "subtitle": "Upload a drawing and tell us material, quantity and finish. This is a preliminary range, not a binding quote.",
+    "title": "Calculate a ballpark price yourself",
+    "subtitle": "Pick the material, quantity and processes involved — get an instant indicative price range, no drawing upload needed.",
     "quickEstimateTitle": "Quick price range",
     "quickEstimateSubtitle": "A rough, rule-based range — not geometry-aware. For a firm number, use the full form below.",
     "getEstimateCta": "Calculate estimate",

@@ -10,6 +10,7 @@ import { GallerySection } from "@/components/home/gallery-section";
 import { CapabilitiesSection } from "@/components/home/capabilities-section";
 import { QualitySection } from "@/components/home/quality-section";
 import { FaqSection } from "@/components/home/faq-section";
+import { CalculatorSection } from "@/components/home/calculator-section";
 import { FinalCtaSection } from "@/components/home/final-cta-section";
 
 type Props = {
@@ -33,6 +34,7 @@ export default async function HomePage({ params }: Props) {
       <CapabilitiesSection />
       <QualitySection />
       <FaqSection />
+      <CalculatorSection />
       <FinalCtaSection />
     </>
   );

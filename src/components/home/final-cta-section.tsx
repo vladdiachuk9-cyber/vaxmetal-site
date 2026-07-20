@@ -1,6 +1,5 @@
 import { useTranslations } from "next-intl";
 import { RfqForm } from "@/components/conversion/rfq-form";
-import { QuoteEstimatorWidget } from "@/components/conversion/quote-estimator-widget";
 import { BookCallButton } from "@/components/conversion/book-call-button";
 
 export function FinalCtaSection() {
@@ -16,9 +15,6 @@ export function FinalCtaSection() {
           <p className="mt-4 max-w-md text-lg text-steel">{t("subtitle")}</p>
           <div className="mt-6">
             <BookCallButton label={t("ctaSecondary")} />
-          </div>
-          <div className="mt-8">
-            <QuoteEstimatorWidget />
           </div>
         </div>
         <RfqForm />
