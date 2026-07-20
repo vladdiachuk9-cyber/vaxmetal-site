@@ -17,7 +17,7 @@ export function TracksSection() {
           <Link
             key={industry.key}
             href={`/industries/${industry.slug[locale]}`}
-            className="group overflow-hidden rounded-xl border border-border bg-white transition-colors hover:border-blue"
+            className="group overflow-hidden rounded-xl border border-border bg-white transition-colors hover:border-pine"
           >
             {industry.image && (
               <div className="relative aspect-video overflow-hidden">
@@ -31,12 +31,12 @@ export function TracksSection() {
               </div>
             )}
             <div className="p-7">
-              <span className="inline-block rounded-full bg-blue-tint px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-dark">
+              <span className="inline-block rounded-full bg-pine-tint px-3 py-1 text-xs font-semibold font-mono uppercase tracking-wide text-pine-dark">
                 {industry.tag[locale]}
               </span>
               <h3 className="mt-3 font-heading text-xl font-semibold text-ink">{industry.name[locale]}</h3>
               <p className="mt-2 text-sm leading-relaxed text-steel">{industry.shortDescription[locale]}</p>
-              <p className="mt-4 text-xs font-medium uppercase tracking-wide text-steel">
+              <p className="mt-4 text-xs font-medium font-mono uppercase tracking-wide text-steel">
                 {industry.customers[locale]}
               </p>
             </div>

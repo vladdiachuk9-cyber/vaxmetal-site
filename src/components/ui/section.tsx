@@ -8,12 +8,12 @@ export function Section({
 }: {
   id?: string;
   className?: string;
-  tone?: "light" | "fog" | "graphite";
+  tone?: "light" | "fog" | "navy";
   children: React.ReactNode;
 }) {
   const toneClass =
-    tone === "graphite"
-      ? "bg-graphite text-white"
+    tone === "navy"
+      ? "bg-navy text-white"
       : tone === "fog"
         ? "bg-fog"
         : "bg-background";
@@ -34,16 +34,16 @@ export function SectionHeading({
   eyebrow?: string;
   title: string;
   subtitle?: string;
-  tone?: "light" | "fog" | "graphite";
+  tone?: "light" | "fog" | "navy";
 }) {
-  const isDark = tone === "graphite";
+  const isDark = tone === "navy";
   return (
     <div className="mx-auto max-w-2xl text-center">
       {eyebrow && (
         <p
           className={cn(
-            "text-sm font-semibold uppercase tracking-wide",
-            isDark ? "text-blue-tint" : "text-blue"
+            "text-sm font-semibold font-mono uppercase tracking-wide",
+            isDark ? "text-pine-light" : "text-pine"
           )}
         >
           {eyebrow}

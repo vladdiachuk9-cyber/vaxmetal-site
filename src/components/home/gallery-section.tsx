@@ -54,7 +54,7 @@ export function GallerySection() {
           const tile = (
             <figure
               className={`relative flex aspect-square flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border text-center transition-colors ${
-                href ? "border-border hover:border-blue" : "border-border"
+                href ? "border-border hover:border-pine" : "border-border"
               } ${photo ? "" : "bg-fog"}`}
             >
               {photo ? (
@@ -91,7 +91,7 @@ export function GallerySection() {
       <div className="mt-8 text-center">
         <Link
           href="/factory-tour"
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue hover:text-blue-dark"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-pine hover:text-pine-dark"
         >
           {t("tourCta")}
           <ArrowUpRight className="size-4" aria-hidden />

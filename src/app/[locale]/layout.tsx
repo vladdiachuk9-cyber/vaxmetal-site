@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk, Space_Mono } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -22,6 +22,13 @@ const fontSans = Inter({
 const fontHeading = Space_Grotesk({
   variable: "--font-heading",
   subsets: ["latin", "latin-ext"],
+  display: "swap",
+});
+
+const fontMono = Space_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -81,7 +88,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html
       lang={locale}
-      className={`${fontSans.variable} ${fontHeading.variable} h-full antialiased`}
+      className={`${fontSans.variable} ${fontHeading.variable} ${fontMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
         <script

@@ -4,13 +4,13 @@
  * and layout reads from this file, so nothing else needs to change.
  */
 export const siteConfig = {
-  name: "Ferrolinq",
-  legalName: "Ferrolinq Manufacturing LLC", // TODO_VERIFY: real legal entity name
-  tagline: "Full-Cycle Contract Manufacturing — Engineering to Finished Product",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.ferrolinq.example", // TODO_VERIFY: real domain
+  name: "VAXMetal",
+  legalName: "VAXMetal Manufacturing LLC", // TODO_VERIFY: real legal entity name
+  tagline: "Engineering & Manufacturing — ЧПУ, лазер, гибка металла",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.vaxmetal.com", // TODO_VERIFY: real domain
   country: "Ukraine",
   contact: {
-    salesEmail: process.env.NEXT_PUBLIC_SALES_EMAIL ?? "sales@ferrolinq.example", // TODO_VERIFY
+    salesEmail: process.env.NEXT_PUBLIC_SALES_EMAIL ?? "sales@vaxmetal.com", // TODO_VERIFY
     phone: process.env.NEXT_PUBLIC_PHONE ?? "", // TODO_VERIFY
     whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "", // TODO_VERIFY
     telegram: process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "", // TODO_VERIFY

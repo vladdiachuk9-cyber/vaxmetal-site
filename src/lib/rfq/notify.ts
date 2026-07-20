@@ -38,7 +38,7 @@ export async function notifyRfq(
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: process.env.RFQ_FROM_EMAIL ?? "rfq@notifications.example", // TODO_VERIFY
+        from: process.env.RFQ_FROM_EMAIL ?? "rfq@notifications.vaxmetal.com", // TODO_VERIFY
         to: toEmail,
         subject: `New RFQ from ${input.name}${input.company ? ` (${input.company})` : ""}`,
         text: JSON.stringify(summary, null, 2),

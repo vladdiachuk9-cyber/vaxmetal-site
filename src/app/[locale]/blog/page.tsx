@@ -61,7 +61,7 @@ export default async function BlogIndexPage({ params }: Props) {
                 href={`/blog/${article.slug}`}
                 className="block p-6 transition-colors hover:bg-fog"
               >
-                <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-wide text-blue">
+                <div className="flex items-center gap-3 text-xs font-semibold font-mono uppercase tracking-wide text-pine">
                   {cluster && <span>{cluster.name[locale]}</span>}
                   <span className="text-steel-light">
                     {new Date(article.publishedDate).toLocaleDateString(

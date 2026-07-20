@@ -11,10 +11,10 @@ export const mdxComponents: MDXComponents = {
   ul: (props) => <ul className="mt-4 list-disc space-y-2 pl-6 text-steel" {...props} />,
   ol: (props) => <ol className="mt-4 list-decimal space-y-2 pl-6 text-steel" {...props} />,
   li: (props) => <li className="leading-relaxed" {...props} />,
-  a: (props) => <a className="font-medium text-blue underline underline-offset-2" {...props} />,
+  a: (props) => <a className="font-medium text-pine underline underline-offset-2" {...props} />,
   strong: (props) => <strong className="font-semibold text-ink" {...props} />,
   blockquote: (props) => (
-    <blockquote className="mt-4 border-l-2 border-blue pl-4 italic text-steel" {...props} />
+    <blockquote className="mt-4 border-l-2 border-pine pl-4 italic text-steel" {...props} />
   ),
   table: (props) => (
     <div className="mt-4 overflow-x-auto">

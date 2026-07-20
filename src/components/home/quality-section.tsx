@@ -10,7 +10,7 @@ export function QualitySection() {
       <SectionHeading eyebrow="Quality" title={t("title")} />
       <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((item, i) => (
-          <div key={item.name} className="border-t-2 border-blue pt-4">
+          <div key={item.name} className="border-t-2 border-pine pt-4">
             <span className="font-heading text-xs font-semibold text-steel">
               {String(i + 1).padStart(2, "0")}
             </span>

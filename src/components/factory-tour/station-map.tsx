@@ -29,8 +29,8 @@ export function StationMap({ stations }: { stations: FactoryStation[] }) {
                 aria-pressed={activeKey === station.key}
                 className={`flex w-full flex-col items-start gap-2 rounded-xl border p-4 text-left transition-colors ${
                   activeKey === station.key
-                    ? "border-blue bg-blue-tint"
-                    : "border-border bg-white hover:border-blue"
+                    ? "border-pine bg-pine-tint"
+                    : "border-border bg-white hover:border-pine"
                 }`}
               >
                 <span className="flex size-8 items-center justify-center rounded-full bg-ink font-heading text-xs font-semibold text-white">
@@ -70,7 +70,7 @@ export function StationMap({ stations }: { stations: FactoryStation[] }) {
             {relatedService && (
               <Link
                 href={`/services/${relatedService.slug[locale]}`}
-                className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue hover:text-blue-dark"
+                className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-pine hover:text-pine-dark"
               >
                 {t("viewService")}
                 <ArrowUpRight className="size-4" aria-hidden />

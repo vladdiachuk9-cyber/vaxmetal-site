@@ -5,7 +5,7 @@ export function HeroSection() {
 
   return (
     <section className="relative overflow-hidden border-b border-border bg-ink text-white">
-      {/* Lightweight blueprint-grid backdrop — no image/video weight, keeps LCP fast */}
+      {/* Lightweight pineprint-grid backdrop — no image/video weight, keeps LCP fast */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-[0.07]"
@@ -17,12 +17,12 @@ export function HeroSection() {
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 right-0 h-[32rem] w-[32rem] rounded-full bg-blue/20 blur-3xl"
+        className="pointer-events-none absolute -top-40 right-0 h-[32rem] w-[32rem] rounded-full bg-pine/20 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wide text-blue-tint">
+          <p className="text-sm font-semibold font-mono uppercase tracking-wide text-pine-light">
             {t("eyebrow")}
           </p>
           <h1 className="mt-4 font-heading text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
@@ -35,7 +35,7 @@ export function HeroSection() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
               href="#rfq"
-              className="rounded-md bg-blue px-6 py-3.5 text-center text-base font-semibold text-white transition-colors hover:bg-blue-dark"
+              className="rounded-md bg-pine px-6 py-3.5 text-center text-base font-semibold text-white transition-colors hover:bg-pine-dark"
             >
               {t("ctaPrimary")}
             </a>

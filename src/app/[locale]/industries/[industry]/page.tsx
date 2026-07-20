@@ -81,7 +81,7 @@ export default async function IndustryPage({ params }: Props) {
             <ul className="mt-4 space-y-3">
               {industry.useCases[locale].map((useCase) => (
                 <li key={useCase} className="flex gap-3">
-                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-blue" aria-hidden />
+                  <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-pine" aria-hidden />
                   <span className="text-steel">{useCase}</span>
                 </li>
               ))}

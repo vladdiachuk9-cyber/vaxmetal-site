@@ -47,7 +47,7 @@ export function LeadMagnetForm() {
   return (
     <div className="flex flex-col gap-4 rounded-xl border border-border bg-white p-6 sm:flex-row sm:items-center sm:justify-between">
       <div className="flex items-start gap-3">
-        <FileText className="mt-0.5 size-8 shrink-0 text-blue" aria-hidden />
+        <FileText className="mt-0.5 size-8 shrink-0 text-pine" aria-hidden />
         <div>
           <h3 className="font-heading text-base font-semibold text-ink">{t("title")}</h3>
           <p className="mt-1 text-sm text-steel">{t("subtitle")}</p>
@@ -55,7 +55,7 @@ export function LeadMagnetForm() {
       </div>
 
       {status === "done" ? (
-        <p className="shrink-0 text-sm font-medium text-blue">{t("successBody")}</p>
+        <p className="shrink-0 text-sm font-medium text-pine">{t("successBody")}</p>
       ) : (
         <form onSubmit={handleSubmit} className="flex shrink-0 flex-col gap-2 sm:flex-row">
           <input
@@ -76,7 +76,7 @@ export function LeadMagnetForm() {
           <button
             type="submit"
             disabled={status === "submitting"}
-            className="inline-flex items-center justify-center gap-2 rounded-md bg-ink px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-graphite disabled:opacity-60"
+            className="inline-flex items-center justify-center gap-2 rounded-md bg-ink px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-navy disabled:opacity-60"
           >
             <Download className="size-4" aria-hidden />
             {status === "submitting" ? t("submitting") : t("cta")}

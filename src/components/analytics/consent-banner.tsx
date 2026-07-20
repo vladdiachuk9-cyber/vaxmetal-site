@@ -31,7 +31,7 @@ export function ConsentBanner() {
     <div
       role="region"
       aria-label="Cookie consent"
-      className="fixed inset-x-0 bottom-0 z-[90] border-t border-border bg-graphite text-white"
+      className="fixed inset-x-0 bottom-0 z-[90] border-t border-border bg-navy text-white"
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
         <p className="text-sm text-steel-light">
@@ -51,7 +51,7 @@ export function ConsentBanner() {
           <button
             type="button"
             onClick={() => setStoredConsent("granted")}
-            className="rounded-md bg-blue px-4 py-2 text-sm font-semibold hover:bg-blue-dark"
+            className="rounded-md bg-pine px-4 py-2 text-sm font-semibold hover:bg-pine-dark"
           >
             {copy.accept}
           </button>

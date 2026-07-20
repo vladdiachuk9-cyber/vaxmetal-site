@@ -11,16 +11,16 @@ export function SiteFooter() {
   const rfqHref = `/${locale}#rfq`;
 
   return (
-    <footer className="border-t border-border bg-graphite text-white">
+    <footer className="border-t border-border bg-navy text-white">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
-            <BrandLink className="font-heading text-lg font-semibold" />
+            <BrandLink inverted className="font-heading text-lg font-semibold" />
             <p className="mt-3 max-w-xs text-sm text-steel-light">{t("tagline")}</p>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-steel-light">
+            <h3 className="text-sm font-semibold font-mono uppercase tracking-wide text-steel-light">
               {t("servicesTitle")}
             </h3>
             <ul className="mt-3 space-y-2 text-sm text-white/80">
@@ -35,7 +35,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-steel-light">
+            <h3 className="text-sm font-semibold font-mono uppercase tracking-wide text-steel-light">
               {t("industriesTitle")}
             </h3>
             <ul className="mt-3 space-y-2 text-sm text-white/80">
@@ -50,7 +50,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-steel-light">
+            <h3 className="text-sm font-semibold font-mono uppercase tracking-wide text-steel-light">
               {t("contactTitle")}
             </h3>
             <ul className="mt-3 space-y-2 text-sm text-white/80">

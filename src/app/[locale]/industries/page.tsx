@@ -56,7 +56,7 @@ export default async function IndustriesHubPage({ params }: Props) {
             <Link
               key={industry.key}
               href={`/industries/${industry.slug[locale]}`}
-              className="group overflow-hidden rounded-xl border border-border bg-white transition-colors hover:border-blue"
+              className="group overflow-hidden rounded-xl border border-border bg-white transition-colors hover:border-pine"
             >
               {industry.image && (
                 <div className="relative aspect-video overflow-hidden">
@@ -70,7 +70,7 @@ export default async function IndustriesHubPage({ params }: Props) {
                 </div>
               )}
               <div className="p-7">
-                <span className="inline-block rounded-full bg-blue-tint px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-dark">
+                <span className="inline-block rounded-full bg-pine-tint px-3 py-1 text-xs font-semibold font-mono uppercase tracking-wide text-pine-dark">
                   {industry.tag[locale]}
                 </span>
                 <h2 className="mt-3 font-heading text-xl font-semibold text-ink">{industry.name[locale]}</h2>

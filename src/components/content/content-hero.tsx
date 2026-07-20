@@ -11,7 +11,7 @@ export function ContentHero({
     <div className="border-b border-border bg-background">
       <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         {eyebrow && (
-          <p className="text-sm font-semibold uppercase tracking-wide text-blue">{eyebrow}</p>
+          <p className="text-sm font-semibold font-mono uppercase tracking-wide text-pine">{eyebrow}</p>
         )}
         <h1 className="mt-2 font-heading text-3xl font-semibold tracking-tight text-ink sm:text-4xl lg:text-5xl">
           {title}

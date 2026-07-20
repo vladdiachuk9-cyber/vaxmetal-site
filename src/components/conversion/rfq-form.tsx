@@ -50,7 +50,7 @@ export function RfqForm() {
         role="status"
         className="flex flex-col items-center gap-3 rounded-xl border border-border bg-fog p-10 text-center"
       >
-        <CheckCircle2 className="size-10 text-blue" aria-hidden />
+        <CheckCircle2 className="size-10 text-pine" aria-hidden />
         <h3 className="font-heading text-xl font-semibold text-ink">{t("successTitle")}</h3>
         <p className="max-w-md text-steel">{t("successBody")}</p>
       </div>
@@ -65,7 +65,7 @@ export function RfqForm() {
         <input id="companyWebsite" name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <p className="rounded-md bg-blue-tint px-4 py-3 text-sm text-blue-dark">{t("disclaimer")}</p>
+      <p className="rounded-md bg-pine-tint px-4 py-3 text-sm text-pine-dark">{t("disclaimer")}</p>
 
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label={t("nameLabel")} name="name" required autoComplete="name" />
@@ -98,7 +98,7 @@ export function RfqForm() {
         <textarea
           name="message"
           rows={3}
-          className="rounded-md border border-input bg-white px-3 py-2 text-sm text-ink placeholder:text-steel-light focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/30"
+          className="rounded-md border border-input bg-white px-3 py-2 text-sm text-ink placeholder:text-steel-light focus:border-pine focus:outline-none focus:ring-2 focus:ring-pine/30"
         />
       </label>
 
@@ -107,7 +107,7 @@ export function RfqForm() {
           type="checkbox"
           name="consent"
           required
-          className="mt-1 size-4 rounded border-input text-blue focus:ring-blue"
+          className="mt-1 size-4 rounded border-input text-pine focus:ring-pine"
         />
         {t("consentLabel")}
       </label>
@@ -122,7 +122,7 @@ export function RfqForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="rounded-md bg-blue px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-dark disabled:cursor-not-allowed disabled:opacity-60"
+        className="rounded-md bg-pine px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-pine-dark disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "submitting" ? t("submitting") : t("submit")}
       </button>
@@ -152,7 +152,7 @@ function Field({
         name={name}
         required={required}
         autoComplete={autoComplete}
-        className="rounded-md border border-input bg-white px-3 py-2 text-sm text-ink placeholder:text-steel-light focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue/30"
+        className="rounded-md border border-input bg-white px-3 py-2 text-sm text-ink placeholder:text-steel-light focus:border-pine focus:outline-none focus:ring-2 focus:ring-pine/30"
       />
     </label>
   );

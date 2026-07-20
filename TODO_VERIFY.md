@@ -7,13 +7,19 @@ Search the codebase for `TODO_VERIFY` to find each exact spot.
 
 ## 1. Brand identity
 
-- **Company name**: currently `Ferrolinq` (working placeholder) — `src/lib/site-config.ts`
-- **Legal entity name**: `Ferrolinq Manufacturing LLC` (placeholder) — same file
-- **Domain**: `https://www.ferrolinq.example` (placeholder, not a real/registered domain) — same file, also drives `NEXT_PUBLIC_SITE_URL`
+Rebranded to **VAXMetal** per `../brandbook.html` (Brand Book v1.1): navy /
+paper / steel palette with a pine-green accent, Space Grotesk + Inter + Space
+Mono type system, and the "X" axis-intersection mark. Colors and fonts are
+wired end-to-end (`src/app/globals.css` brand tokens, `[locale]/layout.tsx`
+font loaders, `src/components/layout/logo-mark.tsx` + `brand-link.tsx`).
 
-Changing the brand name means editing exactly one file (`site-config.ts`) plus a
-find/replace of "Ferrolinq" in `messages/en.json` / `messages/uk.json` (used a
-few places as literal copy, e.g. footer legal name pattern).
+- **Company name**: `VAXMetal` — `src/lib/site-config.ts`
+- **Legal entity name**: `VAXMetal Manufacturing LLC` (placeholder pending real registration) — same file
+- **Domain**: `https://www.vaxmetal.com` (per brand book's business-card mockup — **verify it's actually registered/owned** before launch) — same file, also drives `NEXT_PUBLIC_SITE_URL`
+
+Changing the brand name means editing exactly one file (`site-config.ts`) —
+`messages/en.json` / `messages/uk.json` don't hardcode the brand name, they
+read it from `siteConfig` at render time.
 
 ## 1b. Price calculator calibration
 
@@ -37,7 +43,7 @@ shouldn't need to change to fix a price.
 
 | Field | Env var | Current value |
 |---|---|---|
-| Sales email | `NEXT_PUBLIC_SALES_EMAIL` | `sales@ferrolinq.example` |
+| Sales email | `NEXT_PUBLIC_SALES_EMAIL` | `sales@vaxmetal.com` |
 | Phone | `NEXT_PUBLIC_PHONE` | *(empty)* |
 | WhatsApp link | `NEXT_PUBLIC_WHATSAPP_URL` | *(empty)* |
 | Telegram link | `NEXT_PUBLIC_TELEGRAM_URL` | *(empty)* |

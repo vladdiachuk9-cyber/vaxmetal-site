@@ -78,7 +78,7 @@ export default async function BlogArticlePage({ params }: Props) {
       />
       <div className="border-b border-border bg-background">
         <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-          <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-wide text-blue">
+          <div className="flex items-center gap-3 text-xs font-semibold font-mono uppercase tracking-wide text-pine">
             {cluster && <span>{cluster.name[locale]}</span>}
             <span className="text-steel-light">
               {new Date(article.publishedDate).toLocaleDateString(

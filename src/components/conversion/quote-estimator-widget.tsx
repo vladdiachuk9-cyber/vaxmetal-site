@@ -183,7 +183,7 @@ export function QuoteEstimatorWidget() {
   return (
     <div className="rounded-xl border border-border bg-fog p-6">
       <div className="flex items-center gap-2 text-sm font-semibold text-ink">
-        <Calculator className="size-4 text-blue" aria-hidden />
+        <Calculator className="size-4 text-pine" aria-hidden />
         {t("quickEstimateTitle")}
       </div>
       <p className="mt-1 text-sm text-steel">{t("quickEstimateSubtitle")}</p>
@@ -402,22 +402,22 @@ export function QuoteEstimatorWidget() {
       </form>
 
       {status === "done" && result && (
-        <div role="status" className="mt-4 rounded-md bg-blue-tint p-4">
-          <p className="font-heading text-lg font-semibold text-blue-dark">
+        <div role="status" className="mt-4 rounded-md bg-pine-tint p-4">
+          <p className="font-heading text-lg font-semibold text-pine-dark">
             {tc("totalRange")}: {result.low}–{result.high} {result.currency}
           </p>
-          <p className="mt-1 text-sm text-blue-dark">
+          <p className="mt-1 text-sm text-pine-dark">
             {tc("perUnitRange")}: {result.perUnit.low}–{result.perUnit.high} {result.currency}
           </p>
-          <p className="mt-1 text-sm text-blue-dark">
+          <p className="mt-1 text-sm text-pine-dark">
             {tc("leadTime")}: {result.leadTimeDays[0]}–{result.leadTimeDays[1]} {tc("days")}
           </p>
 
           <details className="mt-3">
-            <summary className="cursor-pointer text-xs font-semibold text-blue-dark">
+            <summary className="cursor-pointer text-xs font-semibold text-pine-dark">
               {tc("breakdownTitle")}
             </summary>
-            <dl className="mt-2 space-y-1 text-xs text-blue-dark">
+            <dl className="mt-2 space-y-1 text-xs text-pine-dark">
               <div className="flex justify-between">
                 <dt>{tc("materialCostLabel")}</dt>
                 <dd>{result.breakdown.materialCost} {result.currency}</dd>
@@ -445,7 +445,7 @@ export function QuoteEstimatorWidget() {
             </dl>
           </details>
 
-          <p className="mt-3 text-xs text-blue-dark/80">{result.disclaimer}</p>
+          <p className="mt-3 text-xs text-pine-dark/80">{result.disclaimer}</p>
         </div>
       )}
 

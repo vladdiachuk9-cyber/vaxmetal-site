@@ -27,7 +27,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <BrandLink className="flex items-center gap-2 font-heading text-lg font-semibold tracking-tight text-ink" />
+        <BrandLink className="font-heading text-lg font-semibold tracking-tight text-ink" />
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
           {NAV_ITEMS.map((item) =>
@@ -55,7 +55,7 @@ export function SiteHeader() {
           <LocaleSwitcher />
           <a
             href={`/${locale}#rfq`}
-            className="rounded-md bg-ink px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-graphite"
+            className="rounded-md bg-ink px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-navy"
           >
             {t("requestQuote")}
           </a>

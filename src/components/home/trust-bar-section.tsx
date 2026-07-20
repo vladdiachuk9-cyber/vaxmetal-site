@@ -7,7 +7,7 @@ export function TrustBarSection() {
   return (
     <div className="border-b border-border bg-fog">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-        <p className="text-center text-xs font-semibold uppercase tracking-wide text-steel">
+        <p className="text-center text-xs font-semibold font-mono uppercase tracking-wide text-steel">
           {t("title")}
         </p>
         <dl className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-4">
