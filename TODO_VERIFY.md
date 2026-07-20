@@ -48,7 +48,7 @@ shouldn't need to change to fix a price.
 | WhatsApp link | `NEXT_PUBLIC_WHATSAPP_URL` | *(empty)* |
 | Telegram link | `NEXT_PUBLIC_TELEGRAM_URL` | *(empty)* |
 | LinkedIn | `NEXT_PUBLIC_LINKEDIN_URL` | *(empty)* |
-| RFQ notification "from" address | `RFQ_FROM_EMAIL` | `rfq@notifications.example` |
+| RFQ notification "from" address | `RFQ_FROM_EMAIL` | `rfq@notifications.vaxmetal.com` |
 
 Set these in `.env.local` (or hosting provider's env settings) — no code changes needed.
 
