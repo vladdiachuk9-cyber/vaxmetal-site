@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { rfqFormSchema, validateFile } from "@/lib/rfq/schema";
+import { scanFileForViruses } from "@/lib/rfq/antivirus";
 import { storeRfqFile } from "@/lib/rfq/storage";
 import { notifyRfq } from "@/lib/rfq/notify";
 import { sendLeadToCrm } from "@/lib/crm/adapter";
@@ -94,13 +95,33 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // TODO_VERIFY: wire up a virus-scan hook (e.g. ClamAV daemon or a
-    // cloud AV API) here before the file is persisted, once available.
+    // Fail closed: if AV_PROVIDER is configured and the scan itself errors
+    // (daemon unreachable, API down), reject the upload rather than store
+    // an unscanned file. If AV_PROVIDER is unset, scanFileForViruses is a
+    // no-op (see TODO_VERIFY.md — scanning isn't wired up until it's set).
+    try {
+      const scan = await scanFileForViruses(buffer, uploadedFile.name);
+      if (!scan.clean) {
+
+        console.error(`RFQ upload rejected by ${scan.provider}: ${scan.reason ?? "malware detected"}`);
+        return NextResponse.json(
+          { ok: false, error: "The uploaded file failed a security scan. Please email the file directly instead." },
+          { status: 400 }
+        );
+      }
+    } catch (err) {
+
+      console.error("Virus scan failed", err);
+      return NextResponse.json(
+        { ok: false, error: "File upload failed. Please try again or email the file directly." },
+        { status: 500 }
+      );
+    }
 
     try {
       storedFile = await storeRfqFile(uploadedFile, buffer);
     } catch (err) {
-       
+
       console.error("RFQ file storage failed", err);
       return NextResponse.json(
         { ok: false, error: "File upload failed. Please try again or email the file directly." },

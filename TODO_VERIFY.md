@@ -80,10 +80,23 @@ never one without the other.
 
 ## 5. Security follow-up
 
-- **Virus scanning**: RFQ file uploads pass MIME/extension/magic-byte checks
-  but are **not** scanned for malware before being stored. Wire a ClamAV
-  daemon or cloud AV API into `src/app/api/rfq/route.ts` (marked inline)
-  before accepting uploads from the public internet in production.
+- **Virus scanning**: wired up in `src/lib/rfq/antivirus.ts` and called from
+  `src/app/api/rfq/route.ts` right before the file is persisted. Off by
+  default (safe no-op) until `AV_PROVIDER` is set — same pattern as the CRM
+  adapter. Two providers supported, pick one:
+  - `AV_PROVIDER=clamav` + `CLAMAV_HOST` (+ optional `CLAMAV_PORT`, default
+    `3310`) — talks directly to a clamd daemon over TCP (INSTREAM protocol).
+    Needs clamd reachable from wherever the app runs — fine for a VPS/Docker
+    deployment, **not usable on serverless hosting** (no persistent daemon).
+  - `AV_PROVIDER=cloudmersive` + `CLOUDMERSIVE_API_KEY` — calls the
+    Cloudmersive Virus Scan API over HTTPS. Works anywhere, including
+    serverless, but sends file contents to a third party — confirm that's
+    acceptable for the kind of drawings customers will upload.
+  - Either way, this **fails closed**: if `AV_PROVIDER` is set but the
+    scanner is unreachable/misconfigured, or a scan finds something, the
+    upload is rejected (400) rather than silently stored unscanned.
+  - Pick a provider and set the env var(s) above before accepting uploads
+    from the public internet in production.
 
 ## 6. Content still pending
 
