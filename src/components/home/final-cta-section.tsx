@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { RfqForm } from "@/components/conversion/rfq-form";
 import { BookCallButton } from "@/components/conversion/book-call-button";
+import { KpDownloadCard } from "@/components/conversion/kp-download-card";
 
 export function FinalCtaSection() {
   const t = useTranslations("finalCta");
@@ -15,6 +16,9 @@ export function FinalCtaSection() {
           <p className="mt-4 max-w-md text-lg text-steel">{t("subtitle")}</p>
           <div className="mt-6">
             <BookCallButton label={t("ctaSecondary")} />
+          </div>
+          <div className="mt-6">
+            <KpDownloadCard />
           </div>
         </div>
         <RfqForm />

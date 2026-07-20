@@ -182,6 +182,11 @@
     "successBody": "Downloaded — check your downloads folder.",
     "errorBody": "Couldn't generate the file. Please try again."
   },
+  "kpDownload": {
+    "title": "Serial Production Proposal (PDF, RU)",
+    "subtitle": "Process breakdown, terms and how to request a quote — one document.",
+    "cta": "Download proposal"
+  },
   "gallery": {
     "title": "The shop floor",
     "subtitle": "Illustrative photos for now — real shop-floor photography is on its way.",

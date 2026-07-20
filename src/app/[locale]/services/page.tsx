@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/content/breadcrumbs";
 import { ContentHero } from "@/components/content/content-hero";
 import { LinkCardGrid } from "@/components/content/link-card-grid";
 import { ContentPageCta } from "@/components/content/content-page-cta";
+import { KpDownloadCard } from "@/components/conversion/kp-download-card";
 import { services } from "@/content";
 import type { Locale } from "@/content";
 import { siteConfig } from "@/lib/site-config";
@@ -62,6 +63,9 @@ export default async function ServicesHubPage({ params }: Props) {
             href: `/services/${s.slug[locale]}`,
           }))}
         />
+        <div className="mt-10">
+          <KpDownloadCard />
+        </div>
         <ContentPageCta />
       </div>
     </>
