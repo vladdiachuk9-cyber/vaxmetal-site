@@ -43,11 +43,11 @@ in `RATES_UAH` and `EUR_UAH` with:
 Only change values in `RATES_UAH` / `EUR_UAH` — the calculation logic itself
 shouldn't need to change to fix a price.
 
-## 2. Contact details (all currently blank or placeholder, env-driven)
+## 2. Contact details
 
 | Field | Env var | Current value |
 |---|---|---|
-| Sales email | `NEXT_PUBLIC_SALES_EMAIL` | `sales@vaxmetal.com` |
+| Sales email | `NEXT_PUBLIC_SALES_EMAIL` | `sales@vaxmetal.com` — **confirmed real by owner** |
 | Phone | `NEXT_PUBLIC_PHONE` | *(empty)* |
 | WhatsApp link | `NEXT_PUBLIC_WHATSAPP_URL` | *(empty)* |
 | Telegram link | `NEXT_PUBLIC_TELEGRAM_URL` | *(empty)* |

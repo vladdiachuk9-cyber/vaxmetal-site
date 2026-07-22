@@ -10,7 +10,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.vaxmetal.com", // TODO_VERIFY: real domain
   country: "Ukraine",
   contact: {
-    salesEmail: process.env.NEXT_PUBLIC_SALES_EMAIL ?? "sales@vaxmetal.com", // TODO_VERIFY
+    salesEmail: process.env.NEXT_PUBLIC_SALES_EMAIL ?? "sales@vaxmetal.com", // confirmed real by owner
     phone: process.env.NEXT_PUBLIC_PHONE ?? "", // TODO_VERIFY
     whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "", // TODO_VERIFY
     telegram: process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "", // TODO_VERIFY
