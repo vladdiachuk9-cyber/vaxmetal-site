@@ -7,6 +7,7 @@ import { Breadcrumbs } from "@/components/content/breadcrumbs";
 import { ContentHero } from "@/components/content/content-hero";
 import { LinkCardGrid } from "@/components/content/link-card-grid";
 import { ContentPageCta } from "@/components/content/content-page-cta";
+import { KpDownloadCard } from "@/components/conversion/kp-download-card";
 import { industries, getIndustryBySlug, getServicesForIndustry } from "@/content";
 import type { Locale } from "@/content";
 import { siteConfig } from "@/lib/site-config";
@@ -104,6 +105,25 @@ export default async function IndustryPage({ params }: Props) {
               href: `/services/${s.slug[locale]}`,
             }))}
           />
+        )}
+
+        {industry.proposalPdf && (
+          <div className="mt-10">
+            <KpDownloadCard
+              href={industry.proposalPdf}
+              title={
+                locale === "uk"
+                  ? `Комерційна пропозиція — ${industry.name[locale]}`
+                  : `Commercial Proposal — ${industry.name[locale]} (PDF, UK)`
+              }
+              subtitle={
+                locale === "uk"
+                  ? "Опис процесів, можливостей та як замовити розрахунок за цим напрямком."
+                  : "Process breakdown, capabilities and how to request a quote for this track."
+              }
+              cta={locale === "uk" ? "Завантажити КП" : "Download proposal"}
+            />
+          </div>
         )}
 
         <ContentPageCta />

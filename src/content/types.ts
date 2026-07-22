@@ -40,6 +40,8 @@ export interface IndustryContent {
   serviceKeys: string[];
   /** Illustrative stock photo — see TODO_VERIFY.md for licensing notes. */
   image?: { src: string; alt: Localized<string> };
+  /** Path under /public to a direction-specific commercial proposal PDF, if one exists. */
+  proposalPdf?: string;
 }
 
 export interface LocationContent {

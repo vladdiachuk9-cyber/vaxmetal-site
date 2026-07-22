@@ -42,6 +42,7 @@ export const industries: IndustryContent[] = [
         uk: "Тягово-зчіпний пристрій причепа та кріплення ящика з рифленого листа — фурнітура кузова причепа",
       },
     },
+    proposalPdf: "/downloads/VAXMetal_KP_trailer.pdf",
   },
   {
     key: "telescopic-masts",
@@ -82,6 +83,7 @@ export const industries: IndustryContent[] = [
         uk: "Повністю висунута телескопічна щогла на мобільному причепі із сонячними панелями",
       },
     },
+    proposalPdf: "/downloads/VAXMetal_KP_mast.pdf",
   },
   {
     key: "robotics-ugv-chassis",
@@ -122,6 +124,7 @@ export const industries: IndustryContent[] = [
         uk: "Гусеничне шасі наземної платформи з металевою рамою та роликами на пересіченій місцевості",
       },
     },
+    proposalPdf: "/downloads/VAXMetal_KP_robotics.pdf",
   },
   {
     key: "fire-emergency-equipment",
@@ -162,6 +165,7 @@ export const industries: IndustryContent[] = [
         uk: "Відкритий зовнішній відсік обладнання аварійного автомобіля з котушками рукавів та зберіганням",
       },
     },
+    proposalPdf: "/downloads/VAXMetal_KP_fire.pdf",
   },
   {
     key: "metal-wood-furniture",
