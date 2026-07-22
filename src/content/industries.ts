@@ -206,5 +206,6 @@ export const industries: IndustryContent[] = [
         uk: "Індустріальний візок з чорним металевим каркасом та дерев'яними полицями на коліщатках",
       },
     },
+    proposalPdf: "/downloads/VAXMetal_KP_furniture.pdf",
   },
 ];
