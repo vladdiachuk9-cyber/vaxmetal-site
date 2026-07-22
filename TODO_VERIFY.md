@@ -15,7 +15,11 @@ font loaders, `src/components/layout/logo-mark.tsx` + `brand-link.tsx`).
 
 - **Company name**: `VAXMetal` — `src/lib/site-config.ts`
 - **Legal entity name**: `VAXMetal Manufacturing LLC` (placeholder pending real registration) — same file
-- **Domain**: `https://www.vaxmetal.com` (per brand book's business-card mockup — **verify it's actually registered/owned** before launch) — same file, also drives `NEXT_PUBLIC_SITE_URL`
+- **Domain**: `vaxmetal.com` — **registered on GoDaddy, confirmed real.** Still
+  using the code default (`https://www.vaxmetal.com`) via `NEXT_PUBLIC_SITE_URL`
+  in `site-config.ts`; set that env var explicitly on the hosting provider
+  (Vercel) once the domain is attached, so it's not silently relying on the
+  fallback. See "Deployment" below for the Vercel + GoDaddy DNS steps.
 
 Changing the brand name means editing exactly one file (`site-config.ts`) —
 `messages/en.json` / `messages/uk.json` don't hardcode the brand name, they
@@ -169,3 +173,41 @@ never one without the other.
   restart and doesn't share state across multiple server instances. Fine
   for a single-server deployment; swap for Upstash Redis (or similar)
   before scaling horizontally.
+
+## 9. Deployment — connecting vaxmetal.com (GoDaddy) to Vercel
+
+Domain is bought on GoDaddy; hosting choice is Vercel. Steps:
+
+1. **Import the project into Vercel** — `vercel.com/new`, point at this
+   repo (`web/` as the project root if the repo root is `метал/`), framework
+   preset auto-detects Next.js. First deploy will work on the
+   `*.vercel.app` URL before any DNS changes.
+2. **Set environment variables** in the Vercel project settings (Production,
+   and Preview if wanted) — at minimum:
+   - `NEXT_PUBLIC_SITE_URL=https://www.vaxmetal.com`
+   - Everything else listed in section 2 (contact) and section 4
+     (integrations) that's ready to go live.
+3. **Add the domain in Vercel** — Project → Settings → Domains → add
+   `vaxmetal.com` and `www.vaxmetal.com`. Vercel will show the exact DNS
+   records it needs (this can be an `A`/`ALIAS` record for the apex domain
+   or a `CNAME`, depending on what Vercel assigns at the time — follow what
+   its dashboard displays rather than a hardcoded IP, since Vercel's anycast
+   addresses can change).
+4. **Add those records in GoDaddy** — GoDaddy account → My Products → DNS →
+   Manage Zones for `vaxmetal.com`. Typically:
+   - Apex (`@`): an `A` record pointing at Vercel's IP shown in step 3, or
+     GoDaddy's "Forward to www" if Vercel prefers the `CNAME` to live on
+     `www` and apex to forward.
+   - `www`: a `CNAME` pointing at `cname.vercel-dns.com` (exact value shown
+     by Vercel).
+   - **Remove/replace GoDaddy's default parked-domain `A`/`CNAME` records**
+     first — a leftover parking record is the most common reason a domain
+     "doesn't connect."
+5. **Wait for propagation** (usually minutes, can take up to ~24h) — Vercel's
+   Domains tab shows a ✅ once it sees the record and issues the TLS
+   certificate automatically. No manual certificate work needed.
+6. **Decide the canonical host** — pick `https://www.vaxmetal.com` or
+   `https://vaxmetal.com` as canonical and redirect the other (Vercel's
+   domain settings have a toggle for this). Keep it consistent with
+   `NEXT_PUBLIC_SITE_URL` above, since that value drives canonical URLs,
+   `sitemap.xml`, `robots.ts`, and Open Graph tags site-wide.
