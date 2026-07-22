@@ -1,7 +1,9 @@
 /**
- * Central brand/contact config. Brand name and domain are working placeholders —
- * see TODO_VERIFY.md. Swap them here once finalized; every SEO/schema helper
- * and layout reads from this file, so nothing else needs to change.
+ * Central brand/contact config. Name, domain and sales email are confirmed
+ * real; legal entity name and the remaining contact channels below are still
+ * placeholders — see TODO_VERIFY.md. Swap them here once finalized; every
+ * SEO/schema helper and layout reads from this file, so nothing else needs
+ * to change.
  */
 export const siteConfig = {
   name: "VAXMetal",
