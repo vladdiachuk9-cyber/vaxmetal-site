@@ -29,6 +29,14 @@ export const rfqFormSchema = z.object({
   // would tip off bots that the field is being checked.
   companyWebsite: z.string().max(500).optional().default(""),
   locale: z.enum(["en", "uk"]).default("en"),
+  // Product-specific fields (currently only the mast RFQ variant sends
+  // these) — optional so the generic RFQ form is unaffected.
+  product: z.string().trim().max(60).optional().default(""),
+  application: z.string().trim().max(120).optional().default(""),
+  mastHeight: z.string().trim().max(60).optional().default(""),
+  payloadWeight: z.string().trim().max(60).optional().default(""),
+  equipmentNotes: z.string().trim().max(1000).optional().default(""),
+  destination: z.string().trim().max(120).optional().default(""),
 });
 
 export type RfqFormInput = z.infer<typeof rfqFormSchema>;

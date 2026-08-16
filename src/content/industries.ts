@@ -4,7 +4,7 @@ export const industries: IndustryContent[] = [
   {
     key: "trailer-truck-parts",
     slug: { en: "trailer-truck-parts", uk: "detali-prychepiv" },
-    tag: { en: "Track A", uk: "Напрямок А" },
+    tag: { en: "Trailer Hardware", uk: "Причепи та кузови" },
     name: { en: "Trailer & Truck Body Parts", uk: "Деталі та аксесуари для причепів" },
     shortDescription: {
       en: "Drawbars, chassis brackets, tool boxes, mudguards and ramps for EU trailer and truck-body manufacturers.",
@@ -47,40 +47,40 @@ export const industries: IndustryContent[] = [
   {
     key: "telescopic-masts",
     slug: { en: "telescopic-masts", uk: "teleskopichni-shchogly" },
-    tag: { en: "Track B", uk: "Напрямок Б" },
-    name: { en: "Telescopic Masts", uk: "Телескопічні щогли" },
+    tag: { en: "Field Comms", uk: "Польовий зв'язок" },
+    name: { en: "Portable Field Antenna Masts", uk: "Переносні польові телескопічні щогли" },
     shortDescription: {
-      en: "Welded and machined mast sections for mobile surveillance towers, telecom sites, event technology and security integrators.",
-      uk: "Зварні та механооброблені секції щогл для мобільних веж відеоспостереження, телеком-майданчиків, івент-техніки та інтеграторів безпеки.",
+      en: "Rapid-deployment 6–18 m mast platforms for UAV ground systems, RF/data links, repeaters, deployable communications and monitoring equipment.",
+      uk: "Швидкорозгортані щоглові платформи 6–18 м для наземних систем UAV/UGV, RF/data-link обладнання, ретрансляторів, тимчасового зв'язку та моніторингу.",
     },
     intro: {
-      en: "The global telescopic mast market runs around $1.7–1.9 billion, growing 5–7% a year, with security and defense as its largest segments. Premium brands price 2–3x above what a mid-market alternative can offer, with lead times measured in months. We produce welded and machined mast sections and mounting hardware — an established product line already in production, not a concept.",
-      uk: "Світовий ринок телескопічних щогл становить близько $1,7-1,9 млрд, зростає на 5-7% на рік, з безпекою та обороною як найбільшими сегментами. Преміум-бренди встановлюють ціну у 2-3 рази вище того, що може запропонувати середній ціновий сегмент, зі строками у місяці. Ми виробляємо зварні та механооброблені секції щогл і кріплення — відпрацьований продукт, вже в серійному виробництві, а не концепція.",
+      en: "A portable, man-portable telescopic mast platform: aluminium mast, field tripod, guy lines, ground anchors, tool-less section clamps and a customizable top adapter — 6 to 18 m, deployed by one person in about 5 minutes. Already in production, with 1,000+ units manufactured and battlefield-deployed in Ukraine.",
+      uk: "Переносна польова платформа телескопічної щогли: алюмінієва щогла, польова тринога, розтяжки, ґрунтові анкери, безінструментальні затискачі секцій та адаптована верхівка — 6-18 м, розгортається однією людиною за ~5 хвилин. Вже в серійному виробництві, 1 000+ одиниць виготовлено та розгорнуто в реальних бойових умовах в Україні.",
     },
     useCases: {
       en: [
-        "Mobile CCTV and perimeter surveillance towers",
-        "Temporary telecom base station masts (COW)",
-        "Event technology and lighting masts",
-        "Security and defense integrator mast sections",
+        "UAV ground-station antennas and data-link systems",
+        "Repeaters and directional RF systems",
+        "Deployable communications for emergency response and field teams",
+        "Monitoring, sensor and temporary telecom payloads",
       ],
       uk: [
-        "Мобільні вежі CCTV та периметрового спостереження",
-        "Мачти тимчасових базових станцій телеком (COW)",
-        "Щогли для івент-техніки та освітлення",
-        "Секції щогл для інтеграторів безпеки та оборонного сектору",
+        "Антени наземних станцій UAV та data-link системи",
+        "Ретранслятори та напрямлені RF-системи",
+        "Тимчасовий зв'язок для аварійних служб та польових команд",
+        "Моніторинг, сенсори та тимчасове телеком-обладнання",
       ],
     },
     customers: {
-      en: "CCTV tower operators, telecom contractors, event technology providers, security & defense integrators",
-      uk: "Оператори веж CCTV, телеком-підрядники, постачальники івент-техніки, інтегратори безпеки та оборонного сектору",
+      en: "UAV/GCS manufacturers, RF/datalink integrators, public-safety communications, monitoring/telecom integrators",
+      uk: "Виробники UAV/GCS, RF/datalink інтегратори, служби тимчасового зв'язку, інтегратори моніторингу та телекому",
     },
     serviceKeys: ["cnc-turning", "cnc-milling", "welding", "assembly-qc"],
     image: {
-      src: "/images/industries/telescopic-masts.jpg",
+      src: "/images/industries/telescopic-masts/hero-mast-white.png",
       alt: {
-        en: "Fully extended telescopic mast on a mobile solar-powered trailer unit",
-        uk: "Повністю висунута телескопічна щогла на мобільному причепі із сонячними панелями",
+        en: "Portable telescopic field antenna mast on a tripod ground support",
+        uk: "Переносна телескопічна польова антенна щогла на триногій опорі",
       },
     },
     proposalPdf: "/downloads/VAXMetal_KP_mast.pdf",
@@ -88,7 +88,7 @@ export const industries: IndustryContent[] = [
   {
     key: "robotics-ugv-chassis",
     slug: { en: "robotics-ugv-chassis", uk: "shasi-dlya-robototehniky" },
-    tag: { en: "Track C", uk: "Напрямок В" },
+    tag: { en: "Robotics Chassis", uk: "Робототехніка" },
     name: { en: "Robotics & UGV Chassis", uk: "Шасі та корпуса для робототехніки" },
     shortDescription: {
       en: "Welded frames, enclosures and sub-assemblies for robotics OEMs and ground-vehicle integrators.",
@@ -129,7 +129,7 @@ export const industries: IndustryContent[] = [
   {
     key: "fire-emergency-equipment",
     slug: { en: "fire-emergency-equipment", uk: "pozhezhne-obladnannya" },
-    tag: { en: "Track D", uk: "Напрямок Г" },
+    tag: { en: "Fire & Emergency", uk: "Пожежне обладнання" },
     name: { en: "Fire & Emergency Equipment", uk: "Пожежне та аварійне обладнання" },
     shortDescription: {
       en: "Exterior storage cabinets, hose and sand boxes, and vehicle outfitting for fire-equipment distributors.",
@@ -170,7 +170,7 @@ export const industries: IndustryContent[] = [
   {
     key: "metal-wood-furniture",
     slug: { en: "metal-wood-furniture", uk: "mebli-metal-derevo" },
-    tag: { en: "Wave 2", uk: "Хвиля 2" },
+    tag: { en: "Furniture", uk: "Меблі" },
     name: { en: "Metal + Wood Furniture", uk: "Меблі метал+дерево" },
     shortDescription: {
       en: "White-label contract furniture combining our metal frames with partner woodworking.",

@@ -61,7 +61,10 @@ export async function generateCapabilityStatementPdf(): Promise<Uint8Array> {
   }
 
   heading(siteConfig.name, 26);
-  page1.drawText(siteConfig.tagline, { x: MARGIN, y, size: 12, font: regular, color: STEEL });
+  // This document is English-only by design (see file header) — pdf-lib's
+  // standard WinAnsi fonts can't encode the Cyrillic clause in
+  // siteConfig.tagline, so draw a plain-English tagline here instead.
+  page1.drawText("Engineering & Manufacturing", { x: MARGIN, y, size: 12, font: regular, color: STEEL });
   y -= 30;
   page1.drawLine({
     start: { x: MARGIN, y },
@@ -83,16 +86,16 @@ export async function generateCapabilityStatementPdf(): Promise<Uint8Array> {
 
   y -= 10;
   subheading("Why manufacturers overflow to us");
-  bullet("One shop: cutting, machining, welding, finishing and assembly in-house");
-  bullet("In-house engineering bureau — ODM and white-label capable");
-  bullet("Priced 25-35% below German quotes, 15-25% below Polish");
-  bullet("Duty-free EU delivery under DCFTA, 3-7 days DAP");
+  bullet("One shop: cutting, machining, welding, finishing and assembly");
+  bullet("Engineering bureau — ODM and white-label capable");
+  bullet("Cost-competitive production from Ukraine");
+  bullet("EU export delivery: FCA / DAP, duty-free under DCFTA where applicable");
   bullet("Series of 100-5,000 units — our target range, not an exception");
 
   y -= 10;
   subheading("Product tracks");
   bullet("Trailer & truck body parts (drawbars, brackets, tool boxes, ramps)");
-  bullet("Telescopic masts (surveillance, telecom, event technology, security integrators)");
+  bullet("Portable field antenna masts (UAV ground systems, RF/data-link, deployable communications)");
   bullet("Robotics & UGV chassis (welded frames and enclosures)");
   bullet("Fire & emergency equipment (exterior cabinets, vehicle outfitting)");
 
@@ -112,12 +115,7 @@ export async function generateCapabilityStatementPdf(): Promise<Uint8Array> {
   );
   y -= 26;
   page.drawText(
-    "ISO 9001 and ISO 3834 certification in progress. TODO_VERIFY: update with",
-    { x: MARGIN, y, size: 10, font: regular, color: STEEL }
-  );
-  y -= 14;
-  page.drawText(
-    "certificate numbers and completion date once issued.",
+    "ISO 9001 and ISO 3834 certification in progress.",
     { x: MARGIN, y, size: 10, font: regular, color: STEEL }
   );
   y -= 40;
@@ -127,14 +125,6 @@ export async function generateCapabilityStatementPdf(): Promise<Uint8Array> {
   page.drawText(siteConfig.contact.salesEmail, { x: MARGIN, y, size: 10, font: regular, color: BLUE });
   y -= 14;
   page.drawText(siteConfig.url, { x: MARGIN, y, size: 10, font: regular, color: BLUE });
-
-  page.drawText("TODO_VERIFY: contact details are placeholders pending owner sign-off.", {
-    x: MARGIN,
-    y: MARGIN,
-    size: 8,
-    font: regular,
-    color: STEEL,
-  });
 
   return doc.save();
 }

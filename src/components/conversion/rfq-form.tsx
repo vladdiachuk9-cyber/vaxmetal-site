@@ -6,12 +6,13 @@ import { UploadCloud, CheckCircle2, AlertCircle } from "lucide-react";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function RfqForm() {
+export function RfqForm({ variant }: { variant?: "mast" }) {
   const t = useTranslations("estimator");
   const locale = useLocale();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [fileName, setFileName] = useState<string | null>(null);
+  const isMast = variant === "mast";
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -21,6 +22,7 @@ export function RfqForm() {
     const form = event.currentTarget;
     const formData = new FormData(form);
     formData.set("locale", locale);
+    if (isMast) formData.set("product", "Telescopic Mast");
 
     try {
       const res = await fetch("/api/rfq", {
@@ -65,18 +67,55 @@ export function RfqForm() {
         <input id="companyWebsite" name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <p className="rounded-md bg-pine-tint px-4 py-3 text-sm text-pine-dark">{t("disclaimer")}</p>
+      <p className="rounded-md bg-pine-tint px-4 py-3 text-sm text-pine-dark">
+        {isMast ? t("mastHelper") : t("disclaimer")}
+      </p>
 
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label={t("nameLabel")} name="name" required autoComplete="name" />
         <Field label={t("emailLabel")} name="email" type="email" required autoComplete="email" />
         <Field label={t("companyLabel")} name="company" autoComplete="organization" />
         <Field label={t("quantityLabel")} name="quantity" />
-        <Field label={t("materialLabel")} name="material" />
-        <Field label={t("finishLabel")} name="finish" />
+        {isMast ? (
+          <>
+            <label className="grid gap-2 text-sm font-medium text-ink">
+              {t("applicationLabel")}
+              <select
+                name="application"
+                defaultValue=""
+                className="rounded-md border border-input bg-white px-3 py-2 text-sm text-ink focus:border-pine focus:outline-none focus:ring-2 focus:ring-pine/30"
+              >
+                <option value="">{t("applicationPlaceholder")}</option>
+                <option value="uav-datalink">{t("applicationUav")}</option>
+                <option value="public-safety">{t("applicationSafety")}</option>
+                <option value="monitoring-telecom">{t("applicationMonitoring")}</option>
+                <option value="other">{t("applicationOther")}</option>
+              </select>
+            </label>
+            <Field label={t("mastHeightLabel")} name="mastHeight" />
+            <Field label={t("payloadLabel")} name="payloadWeight" />
+            <Field label={t("destinationLabel")} name="destination" />
+          </>
+        ) : (
+          <>
+            <Field label={t("materialLabel")} name="material" />
+            <Field label={t("finishLabel")} name="finish" />
+          </>
+        )}
       </div>
 
-      <Field label={t("toleranceLabel")} name="tolerance" />
+      {isMast ? (
+        <label className="grid gap-2 text-sm font-medium text-ink">
+          {t("equipmentNotesLabel")}
+          <textarea
+            name="equipmentNotes"
+            rows={2}
+            className="rounded-md border border-input bg-white px-3 py-2 text-sm text-ink placeholder:text-steel-light focus:border-pine focus:outline-none focus:ring-2 focus:ring-pine/30"
+          />
+        </label>
+      ) : (
+        <Field label={t("toleranceLabel")} name="tolerance" />
+      )}
 
       <label className="grid gap-2 text-sm font-medium text-ink">
         {t("uploadLabel")}
@@ -124,7 +163,7 @@ export function RfqForm() {
         disabled={status === "submitting"}
         className="rounded-md bg-pine px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-pine-dark disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {status === "submitting" ? t("submitting") : t("submit")}
+        {status === "submitting" ? t("submitting") : isMast ? t("mastSubmit") : t("submit")}
       </button>
     </form>
   );

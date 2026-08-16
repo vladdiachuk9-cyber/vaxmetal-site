@@ -15,6 +15,7 @@ export async function notifyRfq(
   const summary = {
     type: "rfq-submission",
     receivedAt: new Date().toISOString(),
+    product: input.product || undefined,
     name: input.name,
     email: input.email,
     company: input.company,
@@ -22,6 +23,11 @@ export async function notifyRfq(
     quantity: input.quantity,
     finish: input.finish,
     tolerance: input.tolerance,
+    application: input.application || undefined,
+    mastHeight: input.mastHeight || undefined,
+    payloadWeight: input.payloadWeight || undefined,
+    equipmentNotes: input.equipmentNotes || undefined,
+    destination: input.destination || undefined,
     message: input.message,
     locale: input.locale,
     file: file ? { key: file.key, provider: file.provider } : null,
@@ -29,6 +35,7 @@ export async function notifyRfq(
 
   const apiKey = process.env.RESEND_API_KEY;
   const toEmail = siteConfig.contact.salesEmail;
+  const subjectTag = input.product ? ` (${input.product})` : "";
 
   if (apiKey && toEmail) {
     const res = await fetch("https://api.resend.com/emails", {
@@ -40,7 +47,7 @@ export async function notifyRfq(
       body: JSON.stringify({
         from: process.env.RFQ_FROM_EMAIL ?? "rfq@notifications.vaxmetal.com", // TODO_VERIFY
         to: toEmail,
-        subject: `New RFQ from ${input.name}${input.company ? ` (${input.company})` : ""}`,
+        subject: `New RFQ${subjectTag} from ${input.name}${input.company ? ` (${input.company})` : ""}`,
         text: JSON.stringify(summary, null, 2),
       }),
     });

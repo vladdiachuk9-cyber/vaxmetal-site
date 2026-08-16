@@ -73,11 +73,10 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-steel-light sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 border-t border-white/10 pt-8 text-xs text-steel-light">
           <p>
             © {new Date().getFullYear()} {siteConfig.legalName}. {t("rightsReserved")}
           </p>
-          <p className="max-w-md">{t("verifyNote")}</p>
         </div>
       </div>
     </footer>

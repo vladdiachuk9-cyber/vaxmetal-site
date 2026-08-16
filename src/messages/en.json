@@ -1,7 +1,7 @@
 {
   "meta": {
     "homeTitle": "Full-Cycle Contract Manufacturing — Engineering to Finished Product",
-    "homeDescription": "Laser cutting, CNC turning & milling, welding, powder coating and assembly under one roof in Ukraine. Quotes in 24-48h, EU delivery in 3-7 days, priced 25-35% below Western European workshops."
+    "homeDescription": "Laser cutting, CNC turning & milling, welding, powder coating and assembly under one roof in Ukraine. Quotes in 24-48h, cost-competitive production, FCA/DAP export to the EU."
   },
   "nav": {
     "services": "Services",
@@ -17,7 +17,7 @@
   "hero": {
     "eyebrow": "Contract manufacturing, Ukraine → EU",
     "headline": "Full-Cycle Contract Manufacturing — Engineering to Finished Product",
-    "subhead": "Laser cutting, CNC turning & milling, welding, powder coating and assembly under one roof. We take on the welded assemblies, painted parts and finished sub-systems that overloaded EU workshops and digital cutting platforms can't — priced 25–35% below German quotes, delivered DAP in 3–7 days.",
+    "subhead": "Laser cutting, CNC turning & milling, welding, powder coating and assembly under one roof. We take on the welded assemblies, painted parts and finished sub-systems that overloaded EU workshops and digital cutting platforms can't — cost-competitive production from Ukraine, delivered FCA/DAP.",
     "ctaPrimary": "Request a Quote",
     "ctaSecondary": "Upload a Drawing",
     "microcopy": "STEP, DWG, DXF or PDF · Reply within 24-48h"
@@ -27,10 +27,10 @@
     "items": [
       { "label": "HAAS CNC turning centers", "value": "5" },
       { "label": "HAAS CNC milling centers", "value": "5" },
-      { "label": "In-house laser cutting, bending & welding", "value": "" },
-      { "label": "EU delivery (DCFTA, duty-free)", "value": "3–7 days" }
+      { "label": "Laser cutting, bending & welding", "value": "" },
+      { "label": "EU export delivery", "value": "FCA / DAP" }
     ],
-    "certNote": "ISO 9001 & ISO 3834 certification in progress. TODO_VERIFY: certificate numbers and completion date once issued."
+    "certNote": "ISO 9001 & ISO 3834 certification in progress."
   },
   "services": {
     "title": "One shop, the whole process",
@@ -62,7 +62,7 @@
       },
       {
         "name": "Powder Coating",
-        "description": "In-house finishing so parts leave ready to install, not ready for a second subcontractor."
+        "description": "Finishing so parts leave ready to install, not ready for a second subcontractor."
       },
       {
         "name": "Assembly & Packaging",
@@ -72,39 +72,7 @@
   },
   "tracks": {
     "title": "What we build, beyond one-off parts",
-    "subtitle": "Four product tracks built on manufacturing capability we already have in daily production, plus contract furniture as a second-wave line.",
-    "items": [
-      {
-        "tag": "Track A",
-        "name": "Trailer & Truck Body Parts",
-        "description": "Drawbars, chassis brackets, tool boxes, mudguards and ramps in steel and aluminum for EU trailer and truck-body manufacturers. Series of 500–5,000 units — too small for large-volume producers, too custom for mass import.",
-        "customers": "Trailer OEMs, truck body builders, distributors in DE / PL / NL"
-      },
-      {
-        "tag": "Track B",
-        "name": "Telescopic Masts",
-        "description": "Welded and machined mast sections and mounting hardware for mobile surveillance towers, temporary telecom sites, event technology and perimeter security integrators — a mid-market alternative to premium mast brands, already in production.",
-        "customers": "CCTV tower operators, telecom contractors, security & defense integrators"
-      },
-      {
-        "tag": "Track C",
-        "name": "Robotics & UGV Chassis",
-        "description": "Welded frames, enclosures and sub-assemblies for robotics OEMs and ground-vehicle integrators who need fast iteration on small welded series — 20 to 200 units — without tying up their own shop.",
-        "customers": "Robotics startups, industrial AMR builders, ground-vehicle integrators"
-      },
-      {
-        "tag": "Track D",
-        "name": "Fire & Emergency Equipment",
-        "description": "Exterior storage cabinets, hose and sand boxes, and vehicle outfitting for fire-equipment distributors and emergency vehicle body builders — outside the segments that require internal-storage safety certification.",
-        "customers": "Fire equipment distributors, emergency vehicle outfitters"
-      },
-      {
-        "tag": "Wave 2",
-        "name": "Metal + Wood Furniture",
-        "description": "White-label contract furniture combining our metal frames with partner woodworking — loft-style, outdoor and HoReCa pieces in small-to-mid series.",
-        "customers": "Contract furniture brands, HoReCa fit-out companies"
-      }
-    ]
+    "subtitle": "Four product tracks built on manufacturing capability we already have in daily production, plus contract furniture as a second-wave line."
   },
   "process": {
     "title": "From drawing to delivery",
@@ -114,9 +82,9 @@
       { "step": "3", "name": "Cutting & forming", "description": "Laser cutting and CNC press brake bending of blanks." },
       { "step": "4", "name": "CNC turning & milling", "description": "Precision machining on HAAS turning and milling centers." },
       { "step": "5", "name": "Welding & assembly", "description": "TIG, laser, MIG/MAG or spot welding, then sub-assembly." },
-      { "step": "6", "name": "Powder coating", "description": "In-house finishing to your spec." },
+      { "step": "6", "name": "Powder coating", "description": "Finishing to your spec." },
       { "step": "7", "name": "QC & packaging", "description": "Dimensional inspection and export packaging." },
-      { "step": "8", "name": "DAP delivery", "description": "Duty-free delivery to the EU in 3-7 days under DCFTA." }
+      { "step": "8", "name": "Export delivery", "description": "FCA / DAP delivery to the EU." }
     ]
   },
   "whyUs": {
@@ -127,20 +95,20 @@
         "description": "Cutting, welding, finishing and assembly in one place. No hand-off delays, no quality gaps between vendors."
       },
       {
-        "name": "In-house engineering bureau",
+        "name": "Engineering bureau",
         "description": "We can develop a part from a sketch, not just cut what's already on your drawing — ODM and white-label capability included."
       },
       {
-        "name": "Priced below Western European quotes",
-        "description": "25–35% below German shop rates, 15–25% below Polish — without cutting corners on the finished result."
+        "name": "Cost-competitive from Ukraine",
+        "description": "Cost-competitive production from Ukraine — without cutting corners on the finished result."
       },
       {
-        "name": "Duty-free, fast EU delivery",
-        "description": "DCFTA gives zero-duty access to the EU; trucking puts parts on your dock in 3-7 days."
+        "name": "EU export delivery",
+        "description": "FCA / DAP delivery to the EU, duty-free under DCFTA where applicable."
       },
       {
         "name": "Free capacity, not a backlog",
-        "description": "While EU workshops are short more than 300,000 certified welders and turning away work, we have open capacity now."
+        "description": "We have open production capacity now, without a backlog delaying your order."
       },
       {
         "name": "Series that don't interest bigger players",
@@ -157,11 +125,10 @@
       { "name": "Laser Cutting", "detail": "Sheet steel, stainless steel, aluminum" },
       { "name": "CNC Press Brake", "detail": "Bending and forming of laser-cut blanks" },
       { "name": "Welding", "detail": "TIG, laser, MIG/MAG, spot welding" },
-      { "name": "Gear Cutting", "detail": "In-house gear production" },
-      { "name": "Powder Coating", "detail": "In-house finishing line" },
+      { "name": "Gear Cutting", "detail": "Gear production" },
+      { "name": "Powder Coating", "detail": "Finishing line" },
       { "name": "Assembly, QC & Packaging", "detail": "Sub-assembly through export-ready packaging" }
-    ],
-    "photoPlaceholderNote": "TODO: replace equipment illustrations with real shop-floor photography"
+    ]
   },
   "quality": {
     "title": "Quality control, at every step",
@@ -189,7 +156,7 @@
   },
   "gallery": {
     "title": "The shop floor",
-    "subtitle": "Illustrative photos for now — real shop-floor photography is on its way.",
+    "subtitle": "Equipment and processes used in production.",
     "tourCta": "Take the interactive factory tour",
     "items": [
       { "label": "5x HAAS CNC turning centers", "alt": "CNC turning center machining a steel shaft — precision contract manufacturing" },
@@ -208,11 +175,11 @@
     "items": [
       {
         "question": "What is your typical lead time for EU orders?",
-        "answer": "Delivery to the EU takes 3-7 days DAP once production is complete, under DCFTA duty-free access. Production lead time depends on complexity — typically 2-4 weeks for a first order, faster on repeat series."
+        "answer": "Delivery to the EU is FCA or DAP once production is complete, duty-free under DCFTA where applicable. Production lead time depends on complexity — typically 2-4 weeks for a first order, faster on repeat series."
       },
       {
         "question": "Are you ISO certified?",
-        "answer": "ISO 9001 and ISO 3834 certification is in progress. Until certification is complete, we take on orders in segments that don't require it — machine parts, brackets, enclosures and sub-assemblies. TODO_VERIFY: update with certificate numbers once issued."
+        "answer": "ISO 9001 and ISO 3834 certification is in progress. Until certification is complete, we take on orders in segments that don't require it — machine parts, brackets, enclosures and sub-assemblies."
       },
       {
         "question": "What order quantities do you accept?",
@@ -220,7 +187,7 @@
       },
       {
         "question": "Can you develop a part or product from scratch?",
-        "answer": "Yes. Our in-house engineering bureau can design a part or product from a sketch or requirement, including ODM and white-label production under your brand."
+        "answer": "Yes. Our engineering bureau can design a part or product from a sketch or requirement, including ODM and white-label production under your brand."
       },
       {
         "question": "What materials do you work with?",
@@ -311,7 +278,19 @@
     "submitting": "Sending…",
     "successTitle": "Request received",
     "successBody": "A manufacturing engineer will review your file and confirm a firm quote within 24h.",
-    "errorBody": "Something went wrong sending your request. Please try again or email us directly."
+    "errorBody": "Something went wrong sending your request. Please try again or email us directly.",
+    "applicationLabel": "Application / use case",
+    "applicationPlaceholder": "Select an application",
+    "applicationUav": "UAV & data link communications",
+    "applicationSafety": "Deployable communications & public safety",
+    "applicationMonitoring": "Monitoring, sensors & temporary telecom",
+    "applicationOther": "Other",
+    "mastHeightLabel": "Required mast height",
+    "payloadLabel": "Payload / equipment weight",
+    "equipmentNotesLabel": "Equipment / top-interface notes",
+    "destinationLabel": "Destination country / city",
+    "mastSubmit": "Request Mast Configuration & RFQ",
+    "mastHelper": "Tell us your payload, required height and quantity. We will propose a mast configuration and prepare an RFQ."
   },
   "finalCta": {
     "title": "Get an engineering quote in 24–48 hours",
@@ -332,7 +311,6 @@
     "companyTitle": "Company",
     "contactTitle": "Contact",
     "languagesLabel": "Language",
-    "rightsReserved": "All rights reserved.",
-    "verifyNote": "Contact details on this site are placeholders pending owner sign-off (TODO_VERIFY)."
+    "rightsReserved": "All rights reserved."
   }
 }

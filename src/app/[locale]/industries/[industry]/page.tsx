@@ -8,10 +8,22 @@ import { ContentHero } from "@/components/content/content-hero";
 import { LinkCardGrid } from "@/components/content/link-card-grid";
 import { ContentPageCta } from "@/components/content/content-page-cta";
 import { KpDownloadCard } from "@/components/conversion/kp-download-card";
+import { TelescopicMastPage } from "@/components/industries/telescopic-mast";
 import { industries, getIndustryBySlug, getServicesForIndustry } from "@/content";
 import type { Locale } from "@/content";
 import { siteConfig } from "@/lib/site-config";
 import { localeAlternates } from "@/lib/seo/schema";
+
+const MAST_SEO = {
+  title: {
+    en: "Portable Telescopic Antenna Masts 6–18 m | VAXMetal",
+    uk: "Переносні телескопічні щогли 6–18 м для антен | VAXMetal",
+  },
+  description: {
+    en: "Rapid-deployment aluminium antenna masts for UAV ground systems, RF/data links, repeaters, public safety and temporary telecom. 6–18 m, OEM-configurable, FCA/DAP export.",
+    uk: "Переносні алюмінієві щогли для антен, ретрансляторів, UAV/UGV систем, тимчасового зв'язку та моніторингу. 6–18 м, OEM-конфігурації, експорт FCA/DAP.",
+  },
+} as const;
 
 type Props = { params: Promise<{ locale: Locale; industry: string }> };
 
@@ -24,9 +36,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, industry: industrySlug } = await params;
   const industry = getIndustryBySlug(locale, industrySlug);
   if (!industry) return {};
+  const isMast = industry.key === "telescopic-masts";
   return {
-    title: industry.name[locale],
-    description: industry.shortDescription[locale],
+    title: isMast ? MAST_SEO.title[locale] : industry.name[locale],
+    description: isMast ? MAST_SEO.description[locale] : industry.shortDescription[locale],
     alternates: {
       canonical: `/${locale}/industries/${industry.slug[locale]}`,
       languages: localeAlternates({
@@ -42,6 +55,10 @@ export default async function IndustryPage({ params }: Props) {
   setRequestLocale(locale);
   const industry = getIndustryBySlug(locale, industrySlug);
   if (!industry) notFound();
+
+  if (industry.key === "telescopic-masts") {
+    return <TelescopicMastPage locale={locale} industry={industry} />;
+  }
 
   const relatedServices = getServicesForIndustry(industry.key);
 

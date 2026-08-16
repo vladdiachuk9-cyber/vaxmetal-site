@@ -6,7 +6,6 @@ import { TracksSection } from "@/components/home/tracks-section";
 import { ProcessSection } from "@/components/home/process-section";
 import { WhyUsSection } from "@/components/home/why-us-section";
 import { LeadMagnetSection } from "@/components/home/lead-magnet-section";
-import { GallerySection } from "@/components/home/gallery-section";
 import { CapabilitiesSection } from "@/components/home/capabilities-section";
 import { QualitySection } from "@/components/home/quality-section";
 import { FaqSection } from "@/components/home/faq-section";
@@ -30,7 +29,6 @@ export default async function HomePage({ params }: Props) {
       <ProcessSection />
       <WhyUsSection />
       <LeadMagnetSection />
-      <GallerySection />
       <CapabilitiesSection />
       <QualitySection />
       <FaqSection />
