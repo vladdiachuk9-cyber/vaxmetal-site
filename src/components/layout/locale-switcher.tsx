@@ -3,6 +3,8 @@
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
+import { translatePathname } from "@/i18n/slug-translation";
+import type { Locale } from "@/content/types";
 
 const LABELS: Record<string, string> = {
   en: "EN",
@@ -21,7 +23,9 @@ export function LocaleSwitcher() {
           {i > 0 && <span className="mx-1 text-steel-light">/</span>}
           <button
             type="button"
-            onClick={() => router.replace(pathname, { locale: l })}
+            onClick={() =>
+              router.replace(translatePathname(pathname, locale as Locale, l), { locale: l })
+            }
             aria-current={l === locale ? "true" : undefined}
             className={
               l === locale
