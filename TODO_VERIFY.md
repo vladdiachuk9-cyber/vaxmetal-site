@@ -66,12 +66,18 @@ already held. Update once certificates are issued:
 
 ## 4. Integrations
 
-**Connected:** Google Tag Manager — container `GTM-TM3MRPK7`, confirmed real
-by the owner. Wired into `src/components/analytics/analytics-scripts.tsx`
-alongside the other tags, same consent gating (loads once the visitor
-accepts the cookie banner — no env var needed since the ID is a real
-default, but `NEXT_PUBLIC_GTM_ID` can override it for a different
-environment/container).
+**Connected:** Google Tag Manager — container `GTM-PZFXNRFL`, confirmed real
+by the owner. Wired directly into `src/app/[locale]/layout.tsx` (not
+`analytics-scripts.tsx`) as a `beforeInteractive` script right in the root
+layout, plus the `<noscript>` fallback as the first element in `<body>` —
+matching Google's own install instructions (as high in `<head>` as
+Next.js allows, immediately after `<body>` opens). Deliberately **not**
+gated behind the cookie-consent banner like the other tags below: GTM
+container loading itself needs to be unconditional for its real-time/
+preview view to work, and any per-tag consent logic (e.g. Consent Mode)
+is configured inside the GTM container itself, not in this codebase.
+Hardcoded rather than env-driven since the owner gave a specific
+confirmed ID to install, not a placeholder.
 
 **Not yet connected (all safely no-op until configured):**
 

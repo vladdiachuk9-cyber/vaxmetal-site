@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Space_Grotesk, Space_Mono } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -31,6 +32,13 @@ const fontMono = Space_Mono({
   weight: ["400", "700"],
   display: "swap",
 });
+
+// Installed sitewide per owner request — loads unconditionally (not gated
+// behind cookie consent like the tags in analytics-scripts.tsx) so GTM's
+// own real-time/preview views work immediately. Consent for individual
+// tags configured inside the GTM container itself is the owner's
+// responsibility from here.
+const GTM_ID = "GTM-PZFXNRFL";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -90,7 +98,22 @@ export default async function LocaleLayout({ children, params }: Props) {
       lang={locale}
       className={`${fontSans.variable} ${fontHeading.variable} ${fontMono.variable} h-full antialiased`}
     >
+      <Script id="gtm-head" strategy="beforeInteractive">
+        {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','${GTM_ID}');`}
+      </Script>
       <body className="flex min-h-full flex-col bg-background text-foreground">
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <script
           type="application/ld+json"
            
