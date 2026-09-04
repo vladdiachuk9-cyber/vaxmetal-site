@@ -64,7 +64,16 @@ already held. Update once certificates are issued:
 - `messages/en.json` / `messages/uk.json` — `trustBar.certNote`, `faq.items[1].answer`
 - `src/lib/pdf/capability-statement.ts` — same note, baked into the generated PDF
 
-## 4. Integrations not yet connected (all safely no-op until configured)
+## 4. Integrations
+
+**Connected:** Google Tag Manager — container `GTM-TM3MRPK7`, confirmed real
+by the owner. Wired into `src/components/analytics/analytics-scripts.tsx`
+alongside the other tags, same consent gating (loads once the visitor
+accepts the cookie banner — no env var needed since the ID is a real
+default, but `NEXT_PUBLIC_GTM_ID` can override it for a different
+environment/container).
+
+**Not yet connected (all safely no-op until configured):**
 
 | Integration | Env var(s) | Current behavior without it |
 |---|---|---|
@@ -78,9 +87,10 @@ already held. Update once certificates are issued:
 | RFQ file storage (S3) | `RFQ_S3_BUCKET`, `RFQ_S3_REGION`, `RFQ_S3_ACCESS_KEY_ID`, `RFQ_S3_SECRET_ACCESS_KEY` | falls back to local disk (`uploads/rfq/`, gitignored) — fine for a single server, **not** durable for a real multi-instance deployment |
 | RFQ email delivery (Resend) | `RESEND_API_KEY` | falls back to a server console log — RFQ data isn't lost, but no one gets emailed until this is set |
 
-All of the above are also gated correctly for GDPR: analytics scripts only
-load after the visitor accepts the cookie banner **and** the env var is set —
-never one without the other.
+All of the above analytics/tracking tags are also gated correctly for GDPR:
+they only load after the visitor accepts the cookie banner, and (except
+GTM, which has a real default ID) only if the env var is set too — never
+tracking without consent.
 
 ## 5. Security follow-up
 
