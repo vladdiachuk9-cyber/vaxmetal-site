@@ -16,6 +16,8 @@ export interface ServiceContent {
   specs: Spec[];
   materialKeys: string[];
   industryKeys: string[];
+  /** Explicit opt-in for the footer's services list, instead of an implicit array-position slice. */
+  featuredInFooter?: boolean;
 }
 
 export interface MaterialContent {

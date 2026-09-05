@@ -2,6 +2,31 @@ import type { ServiceContent } from "./types";
 
 export const services: ServiceContent[] = [
   {
+    key: "custom-metal-fabrication",
+    slug: { en: "custom-metal-fabrication", uk: "vyhotovlennia-metalevykh-vyrobiv" },
+    name: {
+      en: "Custom Metal Fabrication",
+      uk: "Виготовлення металевих виробів на замовлення",
+    },
+    shortDescription: {
+      en: "Custom metal parts, structures and assemblies from a drawing, sketch, photo or idea — no CAD required to start.",
+      uk: "Нестандартні металеві деталі, конструкції та вузли за кресленням, ескізом, фото чи ідеєю — CAD для старту не обов'язковий.",
+    },
+    intro: {
+      en: "VAXMetal reviews and manufactures custom metal parts, frames, brackets, enclosures, structures and finished assemblies for commercial and industrial customers. A project can start with production-ready CAD files, but it can also start with a sketch, photograph, sample, reference product or a simple functional requirement.",
+      uk: "VAXMetal розглядає та виготовляє нестандартні металеві деталі, рами, кронштейни, корпуси, конструкції та готові вузли для комерційних і промислових замовників. Проєкт може починатися з готових CAD-файлів, але також із ескізу, фотографії, зразка чи опису функції.",
+    },
+    specs: [
+      { label: { en: "Input needed to start", uk: "Що потрібно для старту" }, value: { en: "Idea, photo, sketch or drawing", uk: "Ідея, фото, ескіз або креслення" } },
+      { label: { en: "Initial review", uk: "Первинний розгляд" }, value: { en: "Within 24–48 hours", uk: "Протягом 24–48 годин" } },
+      { label: { en: "Materials", uk: "Матеріали" }, value: { en: "Steel, stainless steel, aluminium", uk: "Сталь, нержавіюча сталь, алюміній" } },
+      { label: { en: "Delivery", uk: "Доставка" }, value: { en: "FCA / DAP to the EU", uk: "FCA / DAP до ЄС" } },
+    ],
+    materialKeys: ["steel", "stainless-steel", "aluminum"],
+    industryKeys: [],
+    featuredInFooter: true,
+  },
+  {
     key: "contract-manufacturing-oem",
     slug: { en: "contract-manufacturing-oem", uk: "kontraktne-vyrobnytstvo" },
     name: {
@@ -24,6 +49,7 @@ export const services: ServiceContent[] = [
     ],
     materialKeys: ["steel", "stainless-steel", "aluminum"],
     industryKeys: ["trailer-truck-parts", "telescopic-masts", "robotics-ugv-chassis", "fire-emergency-equipment"],
+    featuredInFooter: true,
   },
   {
     key: "laser-cutting",
@@ -45,6 +71,7 @@ export const services: ServiceContent[] = [
     ],
     materialKeys: ["steel", "stainless-steel", "aluminum"],
     industryKeys: ["trailer-truck-parts", "telescopic-masts", "robotics-ugv-chassis", "fire-emergency-equipment"],
+    featuredInFooter: true,
   },
   {
     key: "cnc-turning",
@@ -65,6 +92,7 @@ export const services: ServiceContent[] = [
     ],
     materialKeys: ["steel", "stainless-steel", "aluminum"],
     industryKeys: ["telescopic-masts", "robotics-ugv-chassis"],
+    featuredInFooter: true,
   },
   {
     key: "cnc-milling",
@@ -85,6 +113,7 @@ export const services: ServiceContent[] = [
     ],
     materialKeys: ["steel", "stainless-steel", "aluminum"],
     industryKeys: ["telescopic-masts", "robotics-ugv-chassis"],
+    featuredInFooter: true,
   },
   {
     key: "sheet-metal-bending",
@@ -105,6 +134,7 @@ export const services: ServiceContent[] = [
     ],
     materialKeys: ["steel", "stainless-steel", "aluminum"],
     industryKeys: ["trailer-truck-parts", "fire-emergency-equipment"],
+    featuredInFooter: true,
   },
   {
     key: "welding",
@@ -126,6 +156,7 @@ export const services: ServiceContent[] = [
     ],
     materialKeys: ["steel", "stainless-steel", "aluminum"],
     industryKeys: ["trailer-truck-parts", "telescopic-masts", "robotics-ugv-chassis", "fire-emergency-equipment", "metal-wood-furniture"],
+    featuredInFooter: true,
   },
   {
     key: "powder-coating",

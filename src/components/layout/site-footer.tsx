@@ -24,7 +24,7 @@ export function SiteFooter() {
               {t("servicesTitle")}
             </h3>
             <ul className="mt-3 space-y-2 text-sm text-white/80">
-              {services.slice(0, 6).map((s) => (
+              {services.filter((s) => s.featuredInFooter).map((s) => (
                 <li key={s.key}>
                   <Link href={`/services/${s.slug[locale]}`} className="hover:text-white">
                     {s.name[locale]}

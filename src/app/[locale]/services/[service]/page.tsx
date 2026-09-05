@@ -6,6 +6,8 @@ import { ContentHero } from "@/components/content/content-hero";
 import { SpecTable } from "@/components/content/spec-table";
 import { LinkCardGrid } from "@/components/content/link-card-grid";
 import { ContentPageCta } from "@/components/content/content-page-cta";
+import { CustomProjectCtaLine } from "@/components/content/custom-project-cta-line";
+import { CustomFabricationPage } from "@/components/services/custom-fabrication";
 import {
   services,
   getServiceBySlug,
@@ -15,6 +17,17 @@ import {
 import type { Locale } from "@/content";
 import { serviceJsonLd, localeAlternates } from "@/lib/seo/schema";
 import { siteConfig } from "@/lib/site-config";
+
+const CUSTOM_FAB_SEO = {
+  title: {
+    en: "Custom Metal Fabrication from Idea or Drawing | VAXMetal",
+    uk: "Металеві вироби на замовлення за ескізом чи кресленням | VAXMetal",
+  },
+  description: {
+    en: "Custom metal parts, structures and assemblies from a drawing, sketch, photo or idea. Engineering, laser cutting, CNC, bending, welding and EU delivery.",
+    uk: "Нестандартні металеві деталі, конструкції та вузли за ідеєю, фото, ескізом або кресленням. Інженерний аналіз, різання, CNC, згинання, зварювання.",
+  },
+} as const;
 
 type Props = {
   params: Promise<{ locale: Locale; service: string }>;
@@ -29,10 +42,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, service: serviceSlug } = await params;
   const service = getServiceBySlug(locale, serviceSlug);
   if (!service) return {};
+  const isCustomFab = service.key === "custom-metal-fabrication";
 
   return {
-    title: service.name[locale],
-    description: service.shortDescription[locale],
+    title: isCustomFab ? CUSTOM_FAB_SEO.title[locale] : service.name[locale],
+    description: isCustomFab ? CUSTOM_FAB_SEO.description[locale] : service.shortDescription[locale],
+    openGraph: isCustomFab
+      ? {
+          type: "website",
+          title: CUSTOM_FAB_SEO.title[locale],
+          description: CUSTOM_FAB_SEO.description[locale],
+          images: ["/images/services/custom-metal-fabrication/og.webp"],
+        }
+      : undefined,
+    twitter: isCustomFab ? { card: "summary_large_image" } : undefined,
     alternates: {
       canonical: `/${locale}/services/${service.slug[locale]}`,
       languages: localeAlternates({
@@ -48,6 +71,10 @@ export default async function ServicePage({ params }: Props) {
   setRequestLocale(locale);
   const service = getServiceBySlug(locale, serviceSlug);
   if (!service) notFound();
+
+  if (service.key === "custom-metal-fabrication") {
+    return <CustomFabricationPage locale={locale} service={service} />;
+  }
 
   const t = await getTranslations({ locale, namespace: "nav" });
   const materials = getCombinableMaterialsForService(service.key);
@@ -107,6 +134,7 @@ export default async function ServicePage({ params }: Props) {
           />
         )}
 
+        <CustomProjectCtaLine />
         <ContentPageCta />
       </div>
     </>

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { rfqFormSchema, validateFile } from "@/lib/rfq/schema";
+import { rfqFormSchema, validateFile, validateFiles } from "@/lib/rfq/schema";
 import { scanFileForViruses } from "@/lib/rfq/antivirus";
-import { storeRfqFile } from "@/lib/rfq/storage";
+import { storeRfqFile, type StoredFile } from "@/lib/rfq/storage";
 import { notifyRfq } from "@/lib/rfq/notify";
 import { sendLeadToCrm } from "@/lib/crm/adapter";
 import { isRateLimited } from "@/lib/rate-limit";
@@ -19,6 +19,13 @@ const MAGIC_BYTES: Record<string, (buf: Buffer) => boolean> = {
   step: (buf) => isLikelyText(buf),
   stp: (buf) => isLikelyText(buf),
   dxf: (buf) => isLikelyText(buf),
+  jpg: (buf) => buf.length > 3 && buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff,
+  jpeg: (buf) => buf.length > 3 && buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff,
+  png: (buf) => buf.slice(0, 4).toString("hex") === "89504e47",
+  // RIFF alone isn't enough — WAV/AVI share the same container prefix, so
+  // WEBP must also be checked at its fixed offset.
+  webp: (buf) =>
+    buf.slice(0, 4).toString("ascii") === "RIFF" && buf.slice(8, 12).toString("ascii") === "WEBP",
 };
 
 function isLikelyText(buf: Buffer): boolean {
@@ -75,6 +82,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true });
   }
 
+  // Singular `file` (generic + mast RFQ forms): unchanged contract — a
+  // present file is expected to be valid, so any problem fails the whole
+  // request, exactly as before multi-file support was added below.
   const file = formData.get("file");
   const uploadedFile = file instanceof File && file.size > 0 ? file : null;
 
@@ -83,7 +93,21 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: fileError }, { status: 400 });
   }
 
-  let storedFile = null;
+  // Plural `files` (custom-project form only): every field but name/email/
+  // consent/description is optional, including attachments, so one bad file
+  // must not discard an otherwise-complete, valid lead — handled leniently
+  // further down instead of failing the request.
+  const multiFiles = formData
+    .getAll("files")
+    .filter((f): f is File => f instanceof File && f.size > 0);
+
+  const filesError = validateFiles(multiFiles);
+  if (filesError) {
+    return NextResponse.json({ ok: false, error: filesError }, { status: 400 });
+  }
+
+  const storedFiles: StoredFile[] = [];
+
   if (uploadedFile) {
     const buffer = Buffer.from(await uploadedFile.arrayBuffer());
     const ext = uploadedFile.name.split(".").pop()?.toLowerCase() ?? "";
@@ -119,7 +143,7 @@ export async function POST(req: NextRequest) {
     }
 
     try {
-      storedFile = await storeRfqFile(uploadedFile, buffer);
+      storedFiles.push(await storeRfqFile(uploadedFile, buffer));
     } catch (err) {
 
       console.error("RFQ file storage failed", err);
@@ -130,7 +154,50 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  const { delivered } = await notifyRfq(parsed.data, storedFile);
+  if (multiFiles.length > 0) {
+    // Phase 1: check every file independently, in parallel, without writing
+    // anything. A file that fails its own check is dropped (logged), not
+    // fatal to the request.
+    const checked = await Promise.all(
+      multiFiles.map(async (multiFile) => {
+        const buffer = Buffer.from(await multiFile.arrayBuffer());
+        const ext = multiFile.name.split(".").pop()?.toLowerCase() ?? "";
+        const magicCheck = MAGIC_BYTES[ext];
+        if (magicCheck && !magicCheck(buffer)) {
+          console.error(`RFQ multi-upload dropped "${multiFile.name}": content does not match its extension.`);
+          return null;
+        }
+
+        try {
+          const scan = await scanFileForViruses(buffer, multiFile.name);
+          if (!scan.clean) {
+            console.error(
+              `RFQ multi-upload dropped "${multiFile.name}": rejected by ${scan.provider} (${scan.reason ?? "malware detected"}).`
+            );
+            return null;
+          }
+        } catch (err) {
+          console.error(`RFQ multi-upload dropped "${multiFile.name}": virus scan failed`, err);
+          return null;
+        }
+
+        return { file: multiFile, buffer };
+      })
+    );
+
+    // Phase 2: store only the survivors, so nothing is ever persisted that
+    // didn't already pass its checks (no orphaned uploads on a mid-batch failure).
+    for (const entry of checked) {
+      if (!entry) continue;
+      try {
+        storedFiles.push(await storeRfqFile(entry.file, entry.buffer));
+      } catch (err) {
+        console.error(`RFQ multi-upload storage failed for "${entry.file.name}"`, err);
+      }
+    }
+  }
+
+  const { delivered } = await notifyRfq(parsed.data, storedFiles);
 
   // CRM delivery is a secondary channel — email notification above is the
   // reliable path, so a CRM failure logs but doesn't fail the submission.

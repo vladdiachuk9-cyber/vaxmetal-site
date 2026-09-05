@@ -8,6 +8,7 @@ import { ContentHero } from "@/components/content/content-hero";
 import { LinkCardGrid } from "@/components/content/link-card-grid";
 import { ContentPageCta } from "@/components/content/content-page-cta";
 import { KpDownloadCard } from "@/components/conversion/kp-download-card";
+import { CustomProjectCtaLine } from "@/components/content/custom-project-cta-line";
 import { TelescopicMastPage } from "@/components/industries/telescopic-mast";
 import { industries, getIndustryBySlug, getServicesForIndustry } from "@/content";
 import type { Locale } from "@/content";
@@ -143,6 +144,7 @@ export default async function IndustryPage({ params }: Props) {
           </div>
         )}
 
+        <CustomProjectCtaLine />
         <ContentPageCta />
       </div>
     </>

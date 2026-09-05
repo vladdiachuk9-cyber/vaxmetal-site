@@ -10,7 +10,7 @@ import type { StoredFile } from "./storage";
  */
 export async function notifyRfq(
   input: RfqFormInput,
-  file: StoredFile | null
+  files: StoredFile[]
 ): Promise<{ delivered: boolean; provider: string }> {
   const summary = {
     type: "rfq-submission",
@@ -28,9 +28,22 @@ export async function notifyRfq(
     payloadWeight: input.payloadWeight || undefined,
     equipmentNotes: input.equipmentNotes || undefined,
     destination: input.destination || undefined,
+    referenceUrl: input.referenceUrl || undefined,
+    approxDimensions: input.approxDimensions || undefined,
+    timeline: input.timeline || undefined,
+    deliveryCountry: input.deliveryCountry || undefined,
+    deliveryCity: input.deliveryCity || undefined,
+    ndaRequired: input.ndaRequired || undefined,
+    landingPage: input.landingPage || undefined,
+    sourcePage: input.sourcePage || undefined,
+    referrer: input.referrer || undefined,
+    utmSource: input.utmSource || undefined,
+    utmMedium: input.utmMedium || undefined,
+    utmCampaign: input.utmCampaign || undefined,
+    submittedAt: input.timestamp || undefined,
     message: input.message,
     locale: input.locale,
-    file: file ? { key: file.key, provider: file.provider } : null,
+    files: files.map((f) => ({ key: f.key, provider: f.provider })),
   };
 
   const apiKey = process.env.RESEND_API_KEY;
