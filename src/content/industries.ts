@@ -208,4 +208,52 @@ export const industries: IndustryContent[] = [
     },
     proposalPdf: "/downloads/VAXMetal_KP_furniture.pdf",
   },
+  {
+    key: "anti-drone-protection",
+    slug: { en: "anti-drone-protection", uk: "anti-drone-protection" },
+    tag: { en: "Physical Protection", uk: "Фізичний захист" },
+    name: { en: "Anti-Drone Protection", uk: "Антидроновий захист" },
+    shortDescription: {
+      en: "Custom anti-drone netting systems, protective steel frames and physical barrier structures for vehicles, equipment, critical assets and OEM integrators.",
+      uk: "Антидронові сітки, металеві каркаси, опори та фізичні захисні конструкції під конкретну техніку або об'єкт.",
+    },
+    intro: {
+      en: "VAXMetal manufactures physical anti-drone protection as a metal and engineering layer, not just commodity netting: custom steel frames, mounting hardware, vehicle protection kits, protective structures for fixed assets and OEM steel assemblies for integrators — netting is available as part of a complete system.",
+      uk: "VAXMetal виготовляє фізичний антидроновий захист як металоконструкції та інженерне рішення, а не лише сітку: металеві каркаси, кріплення, комплекти захисту техніки, стаціонарні захисні конструкції та OEM-вироби для інтеграторів — сітка постачається як частина комплектного рішення.",
+    },
+    useCases: {
+      en: [
+        "Vehicle protection frames for pickups, vans and special-purpose platforms",
+        "Protective structures for generators, technical equipment and fixed assets",
+        "Custom protection kits — netting, steel components and mounting hardware",
+        "OEM steel assemblies for counter-UAS and physical-security integrators",
+      ],
+      uk: [
+        "Захисні каркаси для пікапів, бусів та спеціальної техніки",
+        "Захисні конструкції для генераторів, обладнання та стаціонарних об'єктів",
+        "Комплекти захисту — сітка, металеві елементи та кріплення",
+        "OEM-вироби для інтеграторів фізичного захисту та протидії БпЛА",
+      ],
+    },
+    customers: {
+      en: "Counter-UAS integrators, physical-security integrators, EPC and critical-infrastructure contractors, energy and industrial companies, defence and security OEMs",
+      uk: "Військові підрозділи, волонтерські організації, комунальні та енергетичні підприємства, підрядники із захисних конструкцій, інтегратори",
+    },
+    serviceKeys: [
+      "custom-metal-fabrication",
+      "contract-manufacturing-oem",
+      "laser-cutting",
+      "sheet-metal-bending",
+      "welding",
+      "powder-coating",
+      "assembly-qc",
+    ],
+    image: {
+      src: "/images/industries/anti-drone-protection/hero-fixed-asset.png",
+      alt: {
+        en: "Protective steel structure with anti-drone netting around industrial equipment",
+        uk: "Металева захисна конструкція з антидроновою сіткою для промислового обладнання",
+      },
+    },
+  },
 ];

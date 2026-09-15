@@ -55,6 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   entries.push(entry({ en: "/locations-ua", uk: "/locations-ua" }, 0.6));
   entries.push(entry({ en: "/factory-tour", uk: "/factory-tour" }, 0.5));
   entries.push(entry({ en: "/blog", uk: "/blog" }, 0.7));
+  entries.push(entry({ en: "/contact", uk: "/contact" }, 0.6));
 
   // Blog articles (matched across locales by their shared frontmatter `key`)
   const enArticles = getAllArticles("en");

@@ -17,6 +17,7 @@ const NAV_ITEMS = [
   { type: "anchor", href: "#process", key: "process" as const },
   { type: "anchor", href: "#why-us", key: "about" as const },
   { type: "anchor", href: "#faq", key: "faq" as const },
+  { type: "path", href: "/contact", key: "contact" as const },
 ] as const;
 
 export function SiteHeader() {

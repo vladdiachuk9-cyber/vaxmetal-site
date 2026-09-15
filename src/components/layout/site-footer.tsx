@@ -1,9 +1,18 @@
 import { useLocale, useTranslations } from "next-intl";
+import { Phone, Send } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/lib/site-config";
 import { services, industries } from "@/content";
 import type { Locale } from "@/content";
 import { BrandLink } from "./brand-link";
+import { InstagramIcon, FacebookIcon, WhatsAppIcon } from "@/components/icons/social-icons";
+
+const SOCIAL_LINKS = [
+  { key: "whatsapp", icon: WhatsAppIcon, label: "WhatsApp" },
+  { key: "telegram", icon: Send, label: "Telegram" },
+  { key: "instagram", icon: InstagramIcon, label: "Instagram" },
+  { key: "facebook", icon: FacebookIcon, label: "Facebook" },
+] as const;
 
 export function SiteFooter() {
   const t = useTranslations("footer");
@@ -59,6 +68,22 @@ export function SiteFooter() {
                   {siteConfig.contact.salesEmail}
                 </a>
               </li>
+              {siteConfig.contact.phone && (
+                <li>
+                  <a
+                    href={`tel:${siteConfig.contact.phone}`}
+                    className="inline-flex items-center gap-1.5 hover:text-white"
+                  >
+                    <Phone className="size-3.5 shrink-0" aria-hidden />
+                    {siteConfig.contact.phone}
+                  </a>
+                </li>
+              )}
+              <li>
+                <Link href="/contact" className="hover:text-white">
+                  {locale === "uk" ? "Контакти" : "Contact"} →
+                </Link>
+              </li>
               <li>
                 <a href={rfqHref} className="hover:text-white">
                   {t("contactTitle")} →
@@ -70,6 +95,25 @@ export function SiteFooter() {
                 </Link>
               </li>
             </ul>
+
+            <div className="mt-4 flex items-center gap-3">
+              {SOCIAL_LINKS.map(({ key, icon: Icon, label }) => {
+                const href = siteConfig.contact[key];
+                if (!href) return null;
+                return (
+                  <a
+                    key={key}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="-m-1 flex size-11 items-center justify-center rounded-md text-white/70 transition-colors hover:bg-white/10 hover:text-pine-light"
+                  >
+                    <Icon className="size-5" aria-hidden />
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </div>
 

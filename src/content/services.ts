@@ -48,7 +48,7 @@ export const services: ServiceContent[] = [
       { label: { en: "EU delivery", uk: "Доставка в ЄС" }, value: { en: "3–7 days DAP, duty-free (DCFTA)", uk: "3–7 днів DAP, без мита (DCFTA)" } },
     ],
     materialKeys: ["steel", "stainless-steel", "aluminum"],
-    industryKeys: ["trailer-truck-parts", "telescopic-masts", "robotics-ugv-chassis", "fire-emergency-equipment"],
+    industryKeys: ["trailer-truck-parts", "telescopic-masts", "robotics-ugv-chassis", "fire-emergency-equipment", "anti-drone-protection"],
     featuredInFooter: true,
   },
   {
@@ -70,7 +70,7 @@ export const services: ServiceContent[] = [
       { label: { en: "Typical cutting tolerance", uk: "Типовий допуск різання" }, value: { en: "±0.1 mm", uk: "±0,1 мм" } },
     ],
     materialKeys: ["steel", "stainless-steel", "aluminum"],
-    industryKeys: ["trailer-truck-parts", "telescopic-masts", "robotics-ugv-chassis", "fire-emergency-equipment"],
+    industryKeys: ["trailer-truck-parts", "telescopic-masts", "robotics-ugv-chassis", "fire-emergency-equipment", "anti-drone-protection"],
     featuredInFooter: true,
   },
   {
@@ -133,7 +133,7 @@ export const services: ServiceContent[] = [
       { label: { en: "Typical angle tolerance", uk: "Типовий допуск кута" }, value: { en: "±0.5°", uk: "±0,5°" } },
     ],
     materialKeys: ["steel", "stainless-steel", "aluminum"],
-    industryKeys: ["trailer-truck-parts", "fire-emergency-equipment"],
+    industryKeys: ["trailer-truck-parts", "fire-emergency-equipment", "anti-drone-protection"],
     featuredInFooter: true,
   },
   {
@@ -155,7 +155,7 @@ export const services: ServiceContent[] = [
       { label: { en: "Spot welding", uk: "Точкове зварювання" }, value: { en: "Sheet metal sub-assemblies", uk: "Листові вузли" } },
     ],
     materialKeys: ["steel", "stainless-steel", "aluminum"],
-    industryKeys: ["trailer-truck-parts", "telescopic-masts", "robotics-ugv-chassis", "fire-emergency-equipment", "metal-wood-furniture"],
+    industryKeys: ["trailer-truck-parts", "telescopic-masts", "robotics-ugv-chassis", "fire-emergency-equipment", "metal-wood-furniture", "anti-drone-protection"],
     featuredInFooter: true,
   },
   {
@@ -176,7 +176,7 @@ export const services: ServiceContent[] = [
       { label: { en: "Applied to", uk: "Наноситься на" }, value: { en: "Steel, aluminum", uk: "Сталь, алюміній" } },
     ],
     materialKeys: ["steel", "aluminum"],
-    industryKeys: ["trailer-truck-parts", "fire-emergency-equipment"],
+    industryKeys: ["trailer-truck-parts", "fire-emergency-equipment", "anti-drone-protection"],
   },
   {
     key: "assembly-qc",
@@ -195,6 +195,6 @@ export const services: ServiceContent[] = [
       { label: { en: "Documentation", uk: "Документація" }, value: { en: "Packing lists, certificates of conformity", uk: "Пакувальні листи, сертифікати відповідності" } },
     ],
     materialKeys: [],
-    industryKeys: ["trailer-truck-parts", "telescopic-masts", "robotics-ugv-chassis", "fire-emergency-equipment", "metal-wood-furniture"],
+    industryKeys: ["trailer-truck-parts", "telescopic-masts", "robotics-ugv-chassis", "fire-emergency-equipment", "metal-wood-furniture", "anti-drone-protection"],
   },
 ];

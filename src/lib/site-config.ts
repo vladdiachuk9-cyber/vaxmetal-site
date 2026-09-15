@@ -13,9 +13,11 @@ export const siteConfig = {
   country: "Ukraine",
   contact: {
     salesEmail: process.env.NEXT_PUBLIC_SALES_EMAIL ?? "sales@vaxmetal.com", // confirmed real by owner
-    phone: process.env.NEXT_PUBLIC_PHONE ?? "", // TODO_VERIFY
-    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "", // TODO_VERIFY
-    telegram: process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "", // TODO_VERIFY
+    phone: process.env.NEXT_PUBLIC_PHONE ?? "+380639311316", // confirmed real by owner
+    whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "https://wa.me/380639311316", // confirmed real by owner
+    telegram: process.env.NEXT_PUBLIC_TELEGRAM_URL ?? "https://t.me/VAXMetal", // confirmed real by owner
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/vax.metal/", // confirmed real by owner
+    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "https://www.facebook.com/vaxmetal", // confirmed real by owner
     linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL ?? "", // TODO_VERIFY
   },
   capacity: {

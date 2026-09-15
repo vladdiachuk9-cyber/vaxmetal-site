@@ -10,6 +10,7 @@ import { ContentPageCta } from "@/components/content/content-page-cta";
 import { KpDownloadCard } from "@/components/conversion/kp-download-card";
 import { CustomProjectCtaLine } from "@/components/content/custom-project-cta-line";
 import { TelescopicMastPage } from "@/components/industries/telescopic-mast";
+import { AntiDroneProtectionPage } from "@/components/industries/anti-drone";
 import { industries, getIndustryBySlug, getServicesForIndustry } from "@/content";
 import type { Locale } from "@/content";
 import { siteConfig } from "@/lib/site-config";
@@ -26,6 +27,17 @@ const MAST_SEO = {
   },
 } as const;
 
+const ANTI_DRONE_SEO = {
+  title: {
+    en: "Anti-Drone Netting & Protective Steel Structures | VAXMetal",
+    uk: "Антидронові сітки та захисні каркаси | VAXMetal",
+  },
+  description: {
+    en: "Custom anti-drone netting systems, steel frames and protective structures for vehicles, equipment and critical assets. One-off and OEM production.",
+    uk: "Антидронові сітки, металеві каркаси та захисні конструкції для авто, техніки й стаціонарних об'єктів. Виготовлення під ваші розміри.",
+  },
+} as const;
+
 type Props = { params: Promise<{ locale: Locale; industry: string }> };
 
 export function generateStaticParams({ params }: { params: { locale: string } }) {
@@ -38,9 +50,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const industry = getIndustryBySlug(locale, industrySlug);
   if (!industry) return {};
   const isMast = industry.key === "telescopic-masts";
+  const isAntiDrone = industry.key === "anti-drone-protection";
   return {
-    title: isMast ? MAST_SEO.title[locale] : industry.name[locale],
-    description: isMast ? MAST_SEO.description[locale] : industry.shortDescription[locale],
+    title: isMast ? MAST_SEO.title[locale] : isAntiDrone ? ANTI_DRONE_SEO.title[locale] : industry.name[locale],
+    description: isMast
+      ? MAST_SEO.description[locale]
+      : isAntiDrone
+        ? ANTI_DRONE_SEO.description[locale]
+        : industry.shortDescription[locale],
     alternates: {
       canonical: `/${locale}/industries/${industry.slug[locale]}`,
       languages: localeAlternates({
@@ -59,6 +76,10 @@ export default async function IndustryPage({ params }: Props) {
 
   if (industry.key === "telescopic-masts") {
     return <TelescopicMastPage locale={locale} industry={industry} />;
+  }
+
+  if (industry.key === "anti-drone-protection") {
+    return <AntiDroneProtectionPage locale={locale} industry={industry} />;
   }
 
   const relatedServices = getServicesForIndustry(industry.key);

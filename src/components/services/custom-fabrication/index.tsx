@@ -16,6 +16,7 @@ import { CustomFabSeoContent } from "./seo-content";
 import { CustomFabFaq } from "./faq";
 import { CustomFabFormSection } from "./form-section";
 import { PageViewBeacon } from "./page-view-beacon";
+import { AntiDroneCtaLine } from "@/components/content/anti-drone-cta-line";
 
 export function CustomFabricationPage({
   locale,
@@ -47,6 +48,7 @@ export function CustomFabricationPage({
       <CustomFabWhyUs locale={locale} />
       <CustomFabSeoContent locale={locale} />
       <CustomFabFaq locale={locale} />
+      <AntiDroneCtaLine />
       <CustomFabFormSection locale={locale} />
     </>
   );

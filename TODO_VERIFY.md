@@ -48,11 +48,20 @@ shouldn't need to change to fix a price.
 | Field | Env var | Current value |
 |---|---|---|
 | Sales email | `NEXT_PUBLIC_SALES_EMAIL` | `sales@vaxmetal.com` — **confirmed real by owner** |
-| Phone | `NEXT_PUBLIC_PHONE` | *(empty)* |
-| WhatsApp link | `NEXT_PUBLIC_WHATSAPP_URL` | *(empty)* |
-| Telegram link | `NEXT_PUBLIC_TELEGRAM_URL` | *(empty)* |
+| Phone | `NEXT_PUBLIC_PHONE` | `+380639311316` — **confirmed real by owner** |
+| WhatsApp link | `NEXT_PUBLIC_WHATSAPP_URL` | `https://wa.me/380639311316` — **confirmed real by owner** |
+| Telegram link | `NEXT_PUBLIC_TELEGRAM_URL` | `https://t.me/VAXMetal` — **confirmed real by owner** |
+| Instagram link | `NEXT_PUBLIC_INSTAGRAM_URL` | `https://www.instagram.com/vax.metal/` — **confirmed real by owner** |
+| Facebook link | `NEXT_PUBLIC_FACEBOOK_URL` | `https://www.facebook.com/vaxmetal` — **confirmed real by owner** |
 | LinkedIn | `NEXT_PUBLIC_LINKEDIN_URL` | *(empty)* |
 | RFQ notification "from" address | `RFQ_FROM_EMAIL` | `rfq@notifications.vaxmetal.com` |
+
+Phone/WhatsApp/Telegram/Instagram/Facebook are now shown site-wide: footer
+(icons + phone), `/contact` (`src/app/[locale]/contact/page.tsx`), and the
+`Organization` JSON-LD `sameAs`/`contactPoint` in `src/lib/seo/schema.ts`. No
+floating/sticky/popup widgets were added — see
+`VAXMetal_contacts_socials_package/01_TZ_VAXMetal_Contacts_and_Socials.md`
+for the source spec.
 
 Set these in `.env.local` (or hosting provider's env settings) — no code changes needed.
 

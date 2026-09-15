@@ -23,6 +23,9 @@ export const MAX_TOTAL_UPLOAD_BYTES = 50 * 1024 * 1024; // 50MB combined, multi-
 /** Discriminator value the custom-project form sets on `product` so the backend can tell it apart from a generic/mast RFQ. */
 export const CUSTOM_PROJECT_PRODUCT = "Custom Metal Fabrication";
 
+/** Discriminator value the anti-drone-protection RFQ form sets on `product`. */
+export const ANTI_DRONE_PRODUCT = "Anti-Drone Protection";
+
 export const rfqFormSchema = z.object({
   name: z.string().trim().min(2).max(120),
   email: z.string().trim().email().max(200),
@@ -59,6 +62,18 @@ export const rfqFormSchema = z.object({
     .union([z.literal("true"), z.literal("on"), z.literal(true)])
     .optional()
     .transform((v) => v === "true" || v === "on" || v === true),
+  // Shared contact field — every form's phone input should set this (see
+  // TODO_VERIFY.md history: the custom-project form previously posted this
+  // under an unlisted key and zod silently stripped it on every submission).
+  phone: z.string().trim().max(60).optional().default(""),
+  // Anti-drone-protection form fields — optional so every other RFQ form is unaffected.
+  requestType: z.string().trim().max(120).optional().default(""),
+  assetType: z.string().trim().max(120).optional().default(""),
+  requiredDate: z.string().trim().max(60).optional().default(""),
+  installationRequired: z
+    .union([z.literal("true"), z.literal("on"), z.literal(true)])
+    .optional()
+    .transform((v) => v === "true" || v === "on" || v === true),
   // Hidden attribution fields (custom-project form only) — dropped silently
   // by zod's default object-strip behavior if absent, so every other form
   // is unaffected by their presence here.
@@ -70,9 +85,13 @@ export const rfqFormSchema = z.object({
   utmCampaign: z.string().trim().max(200).optional().default(""),
   timestamp: z.string().trim().max(60).optional().default(""),
 }).superRefine((data, ctx) => {
-  // `message` doubles as "project description" for the custom-project form,
-  // where it's the primary required field (every other form leaves it optional).
-  if (data.product === CUSTOM_PROJECT_PRODUCT && data.message.trim().length === 0) {
+  // `message` doubles as "project description" for the custom-project and
+  // anti-drone forms, where it's the primary required field (every other
+  // form leaves it optional).
+  if (
+    (data.product === CUSTOM_PROJECT_PRODUCT || data.product === ANTI_DRONE_PRODUCT) &&
+    data.message.trim().length === 0
+  ) {
     ctx.addIssue({
       code: z.ZodIssueCode.custom,
       path: ["message"],

@@ -47,7 +47,19 @@ export function organizationJsonLd() {
     sameAs: [
       siteConfig.contact.linkedin,
       siteConfig.contact.telegram,
+      siteConfig.contact.instagram,
+      siteConfig.contact.facebook,
     ].filter(Boolean),
+    ...(siteConfig.contact.salesEmail || siteConfig.contact.phone
+      ? {
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "sales",
+            ...(siteConfig.contact.salesEmail ? { email: siteConfig.contact.salesEmail } : {}),
+            ...(siteConfig.contact.phone ? { telephone: siteConfig.contact.phone } : {}),
+          },
+        }
+      : {}),
   };
 }
 
