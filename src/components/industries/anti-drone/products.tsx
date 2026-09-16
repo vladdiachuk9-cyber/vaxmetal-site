@@ -26,6 +26,20 @@ export function AntiDroneProducts({ locale }: { locale: Locale }) {
           </div>
         ))}
       </div>
+
+      <div className="mx-auto mt-10 max-w-3xl text-center">
+        <p className="text-sm font-semibold text-ink">{t.manufactureListTitle[locale]}</p>
+        <ul className="mt-4 flex flex-wrap justify-center gap-2">
+          {t.manufactureList[locale].map((item) => (
+            <li
+              key={item}
+              className="rounded-full border border-border bg-fog px-3 py-1.5 text-xs font-medium text-steel"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
     </Section>
   );
 }

@@ -18,8 +18,8 @@ import { localeAlternates } from "@/lib/seo/schema";
 
 const MAST_SEO = {
   title: {
-    en: "Portable Telescopic Antenna Masts 6–18 m | VAXMetal",
-    uk: "Переносні телескопічні щогли 6–18 м для антен | VAXMetal",
+    en: "Portable Telescopic Antenna Masts 6–18 m",
+    uk: "Переносні телескопічні щогли 6–18 м для антен",
   },
   description: {
     en: "Rapid-deployment aluminium antenna masts for UAV ground systems, RF/data links, repeaters, public safety and temporary telecom. 6–18 m, OEM-configurable, FCA/DAP export.",
@@ -29,11 +29,11 @@ const MAST_SEO = {
 
 const ANTI_DRONE_SEO = {
   title: {
-    en: "Anti-Drone Netting & Protective Steel Structures | VAXMetal",
-    uk: "Антидронові сітки та захисні каркаси | VAXMetal",
+    en: "Anti-Drone Protection Structures & Netting Supports",
+    uk: "Антидронові сітки та захисні каркаси",
   },
   description: {
-    en: "Custom anti-drone netting systems, steel frames and protective structures for vehicles, equipment and critical assets. One-off and OEM production.",
+    en: "Custom steel structures, frames and support systems for anti-drone netting and physical drone protection. Manufacturing to drawing for infrastructure, vehicles and OEM integrators.",
     uk: "Антидронові сітки, металеві каркаси та захисні конструкції для авто, техніки й стаціонарних об'єктів. Виготовлення під ваші розміри.",
   },
 } as const;

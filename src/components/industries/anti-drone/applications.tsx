@@ -1,12 +1,12 @@
-import { Truck, Package, Factory, Cog } from "lucide-react";
+import { Truck, Factory, Tent, Cog } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import type { Locale } from "@/content/types";
 import { antiDronePage, type AntiDroneApplication } from "@/content/anti-drone-page";
 
 const ICONS: Record<AntiDroneApplication["icon"], typeof Truck> = {
-  vehicle: Truck,
-  equipment: Package,
-  infrastructure: Factory,
+  industrial: Factory,
+  vehicles: Truck,
+  temporary: Tent,
   oem: Cog,
 };
 

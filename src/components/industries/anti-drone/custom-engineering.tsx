@@ -27,6 +27,7 @@ export function AntiDroneCustomEngineering({ locale }: { locale: Locale }) {
         </p>
 
         <p className="mt-6 text-steel">{t.closing[locale]}</p>
+        <p className="mt-3 text-xs leading-relaxed text-steel-light">{t.scopeNote[locale]}</p>
 
         <a
           href="#antidrone-rfq"

@@ -13,7 +13,7 @@ export interface AntiDroneProcessStep {
 }
 
 export interface AntiDroneApplication {
-  icon: "vehicle" | "equipment" | "infrastructure" | "oem";
+  icon: "industrial" | "vehicles" | "temporary" | "oem";
   title: Localized<string>;
   text: Localized<string>;
 }
@@ -38,12 +38,12 @@ export const antiDronePage = {
       uk: "Антидронові сітки та захисні металеві конструкції",
     } satisfies Localized<string>,
     subhead: {
-      en: "Custom netting systems, steel frames, supports and physical barrier structures for vehicles, equipment and fixed assets.",
-      uk: "Сітки, металеві каркаси, опори та фізичні захисні бар'єри для автомобілів, техніки, обладнання й стаціонарних об'єктів.",
+      en: "Custom steel structures, support systems and mechanical components for anti-drone netting and physical barriers — engineered and manufactured to your requirements.",
+      uk: "Металеві конструкції, опорні системи та механічні компоненти для антидронової сітки й фізичних бар'єрів — за вашими вимогами.",
     } satisfies Localized<string>,
     supporting: {
-      en: "Manufactured to project requirements — from one-off systems to repeat OEM production.",
-      uk: "Виготовляємо рішення під конкретні габарити та вимоги — від одиничного комплекту до серійного виробництва.",
+      en: "From one-off systems to repeat OEM production.",
+      uk: "Від одиничного комплекту до серійного виробництва.",
     } satisfies Localized<string>,
     ctaPrimary: { en: "Request an Engineering Quote", uk: "Отримати розрахунок" } satisfies Localized<string>,
     ctaSecondary: { en: "Upload a Drawing or Photo", uk: "Надіслати фото або креслення" } satisfies Localized<string>,
@@ -97,6 +97,27 @@ export const antiDronePage = {
         cta: { en: "Discuss Your Project", uk: "Обговорити проєкт" },
       },
     ] satisfies AntiDroneProductCard[],
+    manufactureListTitle: { en: "What we build", uk: "Що ми виготовляємо" } satisfies Localized<string>,
+    manufactureList: {
+      en: [
+        "Netting support frames",
+        "Steel posts & supports",
+        "Overhead support structures",
+        "Perimeter frames",
+        "Mounting hardware",
+        "Custom welded assemblies",
+        "Structural components built to drawing",
+      ],
+      uk: [
+        "Опорні рами для сітки",
+        "Стійки та опори",
+        "Надземні опорні конструкції",
+        "Периметральні рами",
+        "Кріплення та монтажні елементи",
+        "Зварні вузли на замовлення",
+        "Конструктивні елементи за кресленням",
+      ],
+    } satisfies Localized<string[]>,
   },
 
   customEngineering: {
@@ -110,8 +131,22 @@ export const antiDronePage = {
       uk: "Для первинної оцінки достатньо надати:",
     } satisfies Localized<string>,
     inputs: {
-      en: ["Asset type", "Approximate dimensions", "Photos or sketches", "Required quantity", "Operating environment", "Target delivery schedule"],
-      uk: ["Тип об'єкта", "Приблизні розміри", "Фото або ескіз", "Необхідну кількість", "Умови експлуатації", "Бажаний строк"],
+      en: [
+        "Asset type",
+        "Approximate dimensions",
+        "Photos, sketches or a site plan",
+        "Required quantity",
+        "Operating environment",
+        "Target delivery schedule",
+      ],
+      uk: [
+        "Тип об'єкта",
+        "Приблизні розміри",
+        "Фото, ескіз або план об'єкта",
+        "Необхідну кількість",
+        "Умови експлуатації",
+        "Бажаний строк",
+      ],
     } satisfies Localized<string[]>,
     supporting: {
       en: "",
@@ -124,6 +159,10 @@ export const antiDronePage = {
     closing: {
       en: "VAXMetal can manufacture individual steel components or supply a complete system including structural parts, mounting hardware and protective netting.",
       uk: "VAXMetal може виготовити як окремі металеві елементи, так і комплект конструкції з кріпленням та захисною сіткою.",
+    } satisfies Localized<string>,
+    scopeNote: {
+      en: "VAXMetal manufactures the physical structure to your drawing, site plan or specification — we do not design a complete protection or detection system.",
+      uk: "VAXMetal виготовляє фізичну конструкцію за вашим кресленням, планом об'єкта чи специфікацією — ми не проєктуємо комплексну систему захисту чи виявлення.",
     } satisfies Localized<string>,
     cta: { en: "Send Project Information", uk: "Надіслати вихідні дані" } satisfies Localized<string>,
   },
@@ -318,32 +357,32 @@ export const antiDronePage = {
     title: { en: "One Manufacturing Partner — Multiple Applications", uk: "Один виробник — різні типи застосування" } satisfies Localized<string>,
     items: [
       {
-        icon: "vehicle",
-        title: { en: "Vehicles", uk: "Автомобілі" },
+        icon: "industrial",
+        title: { en: "Industrial & Critical Assets", uk: "Промислові та критичні об'єкти" },
         text: {
-          en: "Custom frames and complete structural solutions for vehicles and mobile platforms.",
-          uk: "Каркаси та комплектні конструкції під конкретні автомобілі та мобільні платформи.",
+          en: "Physical protection structures for industrial facilities, critical infrastructure, energy assets and other fixed installations.",
+          uk: "Захисні конструкції для промислових об'єктів, критичної інфраструктури, енергетичних активів та інших стаціонарних об'єктів.",
         },
       },
       {
-        icon: "equipment",
-        title: { en: "Equipment", uk: "Обладнання" },
+        icon: "vehicles",
+        title: { en: "Vehicles & Mobile Equipment", uk: "Автомобілі та мобільна техніка" },
         text: {
-          en: "Physical barrier systems for generators, containers, technical units and other equipment.",
-          uk: "Фізичні бар'єри для генераторів, контейнерів, технічних установок та іншого обладнання.",
+          en: "Custom frames and structural solutions for vehicles and mobile platforms.",
+          uk: "Каркаси та конструктивні рішення для автомобілів і мобільних платформ.",
         },
       },
       {
-        icon: "infrastructure",
-        title: { en: "Infrastructure", uk: "Інфраструктура" },
+        icon: "temporary",
+        title: { en: "Temporary / Field Installations", uk: "Тимчасові та польові рішення" },
         text: {
-          en: "Protective steel structures for industrial and infrastructure assets.",
-          uk: "Каркасні конструкції для промислових та інфраструктурних об'єктів.",
+          en: "Modular support structures for temporary and field-deployed protection setups.",
+          uk: "Модульні опорні конструкції для тимчасових і польових рішень захисту.",
         },
       },
       {
         icon: "oem",
-        title: { en: "OEM Systems", uk: "OEM" },
+        title: { en: "OEM & System Integrators", uk: "OEM та інтегратори" },
         text: {
           en: "Steel sections, frames and fabricated assemblies for integrators and system manufacturers.",
           uk: "Металеві секції, рами та вузли для інтеграторів і виробників систем.",

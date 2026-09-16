@@ -20,8 +20,8 @@ import { siteConfig } from "@/lib/site-config";
 
 const CUSTOM_FAB_SEO = {
   title: {
-    en: "Custom Metal Fabrication from Idea or Drawing | VAXMetal",
-    uk: "Металеві вироби на замовлення за ескізом чи кресленням | VAXMetal",
+    en: "Custom Metal Fabrication from Idea or Drawing",
+    uk: "Металеві вироби на замовлення за ескізом чи кресленням",
   },
   description: {
     en: "Custom metal parts, structures and assemblies from a drawing, sketch, photo or idea. Engineering, laser cutting, CNC, bending, welding and EU delivery.",

@@ -48,7 +48,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = COPY[locale];
   return {
-    title: t.metaTitle,
+    // Absolute title: bypasses the root layout's `%s | VAXMetal` template so
+    // this page's own brand-suffixed title (per the contacts package spec)
+    // isn't doubled up into "... | VAXMetal | VAXMetal".
+    title: { absolute: t.metaTitle },
     description: t.metaDescription,
     alternates: {
       canonical: `/${locale}/contact`,

@@ -237,7 +237,7 @@ export const industries: IndustryContent[] = [
     },
     customers: {
       en: "Counter-UAS integrators, physical-security integrators, EPC and critical-infrastructure contractors, energy and industrial companies, defence and security OEMs",
-      uk: "Військові підрозділи, волонтерські організації, комунальні та енергетичні підприємства, підрядники із захисних конструкцій, інтегратори",
+      uk: "Промислові та енергетичні підприємства, комунальні служби, підрядники із захисних конструкцій, інтегратори, а також військові підрозділи та волонтерські організації",
     },
     serviceKeys: [
       "custom-metal-fabrication",
