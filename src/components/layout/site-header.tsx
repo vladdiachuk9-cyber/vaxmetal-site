@@ -67,6 +67,7 @@ export function SiteHeader() {
           className="inline-flex items-center justify-center rounded-md p-2 text-ink lg:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
+          aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="size-6" /> : <Menu className="size-6" />}
@@ -74,7 +75,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div id="mobile-nav" className="border-t border-border bg-background lg:hidden">
           <nav className="flex flex-col gap-1 px-4 py-4" aria-label="Primary mobile">
             {NAV_ITEMS.map((item) =>
               item.type === "path" ? (

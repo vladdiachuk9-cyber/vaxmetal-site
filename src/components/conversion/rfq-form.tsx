@@ -78,8 +78,16 @@ export function RfqForm({ variant }: { variant?: "mast" }) {
       className="grid gap-5 rounded-xl border border-border bg-white p-6 sm:p-8"
       noValidate
     >
-      {/* Honeypot — hidden from real users via CSS, not display:none, so bots that skip hidden fields still trip it */}
-      <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
+      {/*
+        Honeypot — hidden from real users via off-screen CSS (not display:none,
+        so bots that skip hidden fields still trip it), and tabIndex={-1} so
+        keyboard users never tab into it. Deliberately NOT aria-hidden: an
+        aria-hidden container with a focusable descendant is its own
+        accessibility-tree violation (axe: aria-hidden-focus), which is worse
+        than a screen-reader user rarely encountering an inert, unlabeled-to-
+        assistive-tech field while reading linearly.
+      */}
+      <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
         <label htmlFor="companyWebsite">Company Website</label>
         <input id="companyWebsite" name="companyWebsite" type="text" tabIndex={-1} autoComplete="off" />
       </div>
