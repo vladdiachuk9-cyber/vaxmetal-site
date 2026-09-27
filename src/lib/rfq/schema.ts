@@ -26,6 +26,9 @@ export const CUSTOM_PROJECT_PRODUCT = "Custom Metal Fabrication";
 /** Discriminator value the anti-drone-protection RFQ form sets on `product`. */
 export const ANTI_DRONE_PRODUCT = "Anti-Drone Protection";
 
+/** Discriminator value the electric-heaters RFQ form sets on `product`. */
+export const HEATER_PRODUCT = "Electric Heaters";
+
 export const rfqFormSchema = z.object({
   name: z.string().trim().min(2).max(120),
   email: z.string().trim().email().max(200),
@@ -74,6 +77,18 @@ export const rfqFormSchema = z.object({
     .union([z.literal("true"), z.literal("on"), z.literal(true)])
     .optional()
     .transform((v) => v === "true" || v === "on" || v === true),
+  // Electric-heaters form fields — optional so every other RFQ form is unaffected.
+  productType: z.string().trim().max(120).optional().default(""),
+  targetPower: z.string().trim().max(120).optional().default(""),
+  frontMaterial: z.string().trim().max(120).optional().default(""),
+  controlType: z.string().trim().max(120).optional().default(""),
+  mountingType: z.string().trim().max(120).optional().default(""),
+  requiredCertification: z.string().trim().max(200).optional().default(""),
+  annualQuantity: z.string().trim().max(50).optional().default(""),
+  privateLabel: z
+    .union([z.literal("true"), z.literal("on"), z.literal(true)])
+    .optional()
+    .transform((v) => v === "true" || v === "on" || v === true),
   // Hidden attribution fields (custom-project form only) — dropped silently
   // by zod's default object-strip behavior if absent, so every other form
   // is unaffected by their presence here.
@@ -89,7 +104,9 @@ export const rfqFormSchema = z.object({
   // anti-drone forms, where it's the primary required field (every other
   // form leaves it optional).
   if (
-    (data.product === CUSTOM_PROJECT_PRODUCT || data.product === ANTI_DRONE_PRODUCT) &&
+    (data.product === CUSTOM_PROJECT_PRODUCT ||
+      data.product === ANTI_DRONE_PRODUCT ||
+      data.product === HEATER_PRODUCT) &&
     data.message.trim().length === 0
   ) {
     ctx.addIssue({

@@ -11,6 +11,7 @@ import { KpDownloadCard } from "@/components/conversion/kp-download-card";
 import { CustomProjectCtaLine } from "@/components/content/custom-project-cta-line";
 import { TelescopicMastPage } from "@/components/industries/telescopic-mast";
 import { AntiDroneProtectionPage } from "@/components/industries/anti-drone";
+import { ElectricHeatersPage } from "@/components/industries/electric-heaters";
 import { industries, getIndustryBySlug, getServicesForIndustry } from "@/content";
 import type { Locale } from "@/content";
 import { siteConfig } from "@/lib/site-config";
@@ -38,6 +39,17 @@ const ANTI_DRONE_SEO = {
   },
 } as const;
 
+const HEATERS_SEO = {
+  title: {
+    en: "OEM Electric Heater & Infrared Panel Manufacturing",
+    uk: "Виробництво електричних обігрівачів OEM",
+  },
+  description: {
+    en: "OEM and contract manufacturing of electric infrared panels, ceramic and metal heaters, heated towel rails and industrial heating products in Ukraine.",
+    uk: "OEM та контрактне виробництво електричних інфрачервоних панелей, керамічних і металевих обігрівачів, рушникосушок та промислових нагрівачів.",
+  },
+} as const;
+
 type Props = { params: Promise<{ locale: Locale; industry: string }> };
 
 export function generateStaticParams({ params }: { params: { locale: string } }) {
@@ -45,19 +57,22 @@ export function generateStaticParams({ params }: { params: { locale: string } })
   return industries.map((i) => ({ industry: i.slug[locale] }));
 }
 
+// One-off industry pages with their own SEO copy, keyed by industry.key —
+// avoids an ever-growing ternary chain as more of these pages are added.
+const CUSTOM_SEO: Record<string, { title: Record<Locale, string>; description: Record<Locale, string> }> = {
+  "telescopic-masts": MAST_SEO,
+  "anti-drone-protection": ANTI_DRONE_SEO,
+  "electric-heaters": HEATERS_SEO,
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, industry: industrySlug } = await params;
   const industry = getIndustryBySlug(locale, industrySlug);
   if (!industry) return {};
-  const isMast = industry.key === "telescopic-masts";
-  const isAntiDrone = industry.key === "anti-drone-protection";
+  const customSeo = CUSTOM_SEO[industry.key];
   return {
-    title: isMast ? MAST_SEO.title[locale] : isAntiDrone ? ANTI_DRONE_SEO.title[locale] : industry.name[locale],
-    description: isMast
-      ? MAST_SEO.description[locale]
-      : isAntiDrone
-        ? ANTI_DRONE_SEO.description[locale]
-        : industry.shortDescription[locale],
+    title: customSeo ? customSeo.title[locale] : industry.name[locale],
+    description: customSeo ? customSeo.description[locale] : industry.shortDescription[locale],
     alternates: {
       canonical: `/${locale}/industries/${industry.slug[locale]}`,
       languages: localeAlternates({
@@ -80,6 +95,10 @@ export default async function IndustryPage({ params }: Props) {
 
   if (industry.key === "anti-drone-protection") {
     return <AntiDroneProtectionPage locale={locale} industry={industry} />;
+  }
+
+  if (industry.key === "electric-heaters") {
+    return <ElectricHeatersPage locale={locale} industry={industry} />;
   }
 
   const relatedServices = getServicesForIndustry(industry.key);

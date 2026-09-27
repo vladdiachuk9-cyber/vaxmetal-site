@@ -256,4 +256,45 @@ export const industries: IndustryContent[] = [
       },
     },
   },
+  {
+    key: "electric-heaters",
+    slug: { en: "electric-heaters", uk: "electric-heaters" },
+    tag: { en: "Electric Heating", uk: "Електричне опалення" },
+    name: { en: "Electric Heating Panels", uk: "Електричні обігрівачі" },
+    shortDescription: {
+      en: "OEM manufacturing of infrared panels, metal and ceramic heaters, heated towel rails and industrial heating products.",
+      uk: "OEM-виробництво інфрачервоних панелей, металевих і керамічних обігрівачів, рушникосушок та промислових нагрівачів.",
+    },
+    intro: {
+      en: "VAXMetal manufactures electric infrared heating panels, heated towel rails and industrial heaters as an OEM and contract manufacturing partner — from an existing sample, drawing or target specification to a repeatable product series under your brand, combining metal fabrication, finishing, assembly and packaging.",
+      uk: "VAXMetal виготовляє електричні інфрачервоні нагрівальні панелі, рушникосушки та промислові обігрівачі як OEM- та контрактний виробничий партнер — від існуючого зразка, креслення чи цільової специфікації до повторюваної серії під вашим брендом, поєднуючи металообробку, фінішне покриття, складання та пакування.",
+    },
+    useCases: {
+      en: [
+        "Ceramic, metal, glass and hybrid infrared heating panels",
+        "Electric heated towel rails",
+        "Industrial and outdoor infrared heaters",
+        "OEM / private-label product programs for heating brands and distributors",
+      ],
+      uk: [
+        "Керамічні, металеві, скляні та гібридні інфрачервоні панелі",
+        "Електричні рушникосушки",
+        "Промислові та зовнішні інфрачервоні обігрівачі",
+        "OEM / private-label програми для брендів опалювальної техніки та дистриб'юторів",
+      ],
+    },
+    customers: {
+      en: "Heating equipment brands, distributors and retail chains, HVAC and installation companies, developers and fit-out contractors, industrial customers",
+      uk: "Бренди опалювальної техніки, дистриб'ютори та торгові мережі, HVAC та монтажні компанії, забудовники та fit-out підрядники, промислові замовники",
+    },
+    serviceKeys: [
+      "custom-metal-fabrication",
+      "contract-manufacturing-oem",
+      "laser-cutting",
+      "sheet-metal-bending",
+      "welding",
+      "powder-coating",
+      "assembly-qc",
+    ],
+  },
 ];

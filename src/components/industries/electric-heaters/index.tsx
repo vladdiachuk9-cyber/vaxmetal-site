@@ -5,21 +5,19 @@ import { siteConfig } from "@/lib/site-config";
 import { serviceJsonLd } from "@/lib/seo/schema";
 import { getServicesForIndustry } from "@/content";
 import type { IndustryContent, Locale } from "@/content/types";
-import { AntiDroneHero } from "./hero";
-import { AntiDroneKeyFacts } from "./key-facts";
-import { AntiDroneProducts } from "./products";
-import { AntiDroneCustomEngineering } from "./custom-engineering";
-import { AntiDroneVehicleProtection } from "./vehicle-protection";
-import { AntiDroneFixedAssets } from "./fixed-assets";
-import { AntiDroneOemIntegrators } from "./oem-integrators";
-import { AntiDroneManufacturingCapabilities } from "./manufacturing-capabilities";
-import { AntiDroneProcess } from "./process";
-import { AntiDroneApplications } from "./applications";
-import { AntiDroneRfqSection } from "./antidrone-rfq-section";
-import { AntiDroneFaq } from "./faq";
-import { AntiDroneFinalCta } from "./final-cta";
+import { HeatersHero } from "./hero";
+import { HeatersKeyFacts } from "./key-facts";
+import { HeatersProducts } from "./products";
+import { HeatersOemPrivateLabel } from "./oem-private-label";
+import { HeatersManufacturingCapabilities } from "./manufacturing-capabilities";
+import { HeatersWhoThisIsFor } from "./who-this-is-for";
+import { HeatersProductionExperience } from "./production-experience";
+import { HeatersRfqPrep } from "./rfq-prep";
+import { HeaterRfqSection } from "./heater-rfq-section";
+import { HeatersFaq } from "./faq";
+import { HeatersFinalCta } from "./final-cta";
 
-export function AntiDroneProtectionPage({
+export function ElectricHeatersPage({
   locale,
   industry,
 }: {
@@ -35,9 +33,9 @@ export function AntiDroneProtectionPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             serviceJsonLd({
-              name: "Anti-Drone Protection Structures & Netting Supports",
+              name: "OEM Electric Heater & Heating Panel Manufacturing",
               description:
-                "Manufacturing of steel frames, supports, mounting components and physical barrier structures for vehicles, equipment, fixed assets and system integrators.",
+                "OEM and contract manufacturing of VAXTherm heating panels, VAXDry heated towel rails and VAXRay industrial or outdoor electric heaters.",
               url: `/${locale}/industries/${industry.slug[locale]}`,
             })
           ),
@@ -50,14 +48,11 @@ export function AntiDroneProtectionPage({
           { name: industry.name[locale], href: `/industries/${industry.slug[locale]}` },
         ]}
       />
-      <AntiDroneHero locale={locale} />
-      <AntiDroneKeyFacts locale={locale} />
-      <AntiDroneProducts locale={locale} />
-      <AntiDroneCustomEngineering locale={locale} />
-      <AntiDroneVehicleProtection locale={locale} />
-      <AntiDroneFixedAssets locale={locale} />
-      <AntiDroneOemIntegrators locale={locale} />
-      <AntiDroneManufacturingCapabilities locale={locale} />
+      <HeatersHero locale={locale} />
+      <HeatersKeyFacts locale={locale} />
+      <HeatersProducts locale={locale} />
+      <HeatersOemPrivateLabel locale={locale} />
+      <HeatersManufacturingCapabilities locale={locale} />
       {relatedServices.length > 0 && (
         <Section tone="fog">
           <LinkCardGrid
@@ -80,11 +75,12 @@ export function AntiDroneProtectionPage({
           />
         </Section>
       )}
-      <AntiDroneProcess locale={locale} />
-      <AntiDroneApplications locale={locale} />
-      <AntiDroneRfqSection locale={locale} />
-      <AntiDroneFaq locale={locale} />
-      <AntiDroneFinalCta locale={locale} />
+      <HeatersWhoThisIsFor locale={locale} />
+      <HeatersProductionExperience locale={locale} />
+      <HeatersRfqPrep locale={locale} />
+      <HeaterRfqSection locale={locale} />
+      <HeatersFaq locale={locale} />
+      <HeatersFinalCta locale={locale} />
     </>
   );
 }

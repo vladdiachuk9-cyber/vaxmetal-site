@@ -17,6 +17,7 @@ import { CustomFabFaq } from "./faq";
 import { CustomFabFormSection } from "./form-section";
 import { PageViewBeacon } from "./page-view-beacon";
 import { AntiDroneCtaLine } from "@/components/content/anti-drone-cta-line";
+import { ElectricHeatersCtaLine } from "@/components/content/electric-heaters-cta-line";
 
 export function CustomFabricationPage({
   locale,
@@ -49,6 +50,7 @@ export function CustomFabricationPage({
       <CustomFabSeoContent locale={locale} />
       <CustomFabFaq locale={locale} />
       <AntiDroneCtaLine />
+      <ElectricHeatersCtaLine />
       <CustomFabFormSection locale={locale} />
     </>
   );
