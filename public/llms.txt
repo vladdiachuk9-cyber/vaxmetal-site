@@ -10,7 +10,8 @@ VAXMetal combines metal fabrication, laser cutting, CNC machining, sheet-metal b
 - https://www.vaxmetal.com/en/contact — Contact and RFQ
 
 ## Manufacturing services
-- https://www.vaxmetal.com/en/services/custom-metal-fabrication — Custom metal fabrication from drawing, sketch, photo or requirement
+- https://www.vaxmetal.com/en/services/custom-metal-fabrication — Custom metal parts, frames, enclosures, structures and assemblies from an idea, photo, sketch, sample, drawing or CAD file; steel, stainless steel and aluminium.
+- https://www.vaxmetal.com/uk/services/vyhotovlennia-metalevykh-vyrobiv — Українська версія послуги виготовлення нестандартних металевих виробів та конструкцій на замовлення.
 - https://www.vaxmetal.com/en/services/contract-manufacturing-oem — Contract manufacturing for OEMs and integrators
 - https://www.vaxmetal.com/en/services/laser-cutting — Laser cutting
 - https://www.vaxmetal.com/en/services/sheet-metal-bending — Sheet metal and CNC bending
@@ -21,7 +22,8 @@ VAXMetal combines metal fabrication, laser cutting, CNC machining, sheet-metal b
 ## Industry capabilities
 - https://www.vaxmetal.com/en/industries/anti-drone-protection — Physical anti-drone protection structures, netting supports, vehicle frames and protective steel structures for fixed assets
 - https://www.vaxmetal.com/en/industries/electric-heaters — OEM electric heating panels, VAXTherm heaters, VAXDry heated towel rails and VAXRay industrial/outdoor heaters
-- https://www.vaxmetal.com/en/industries/telescopic-masts — Portable telescopic antenna masts for UAV ground systems, RF/data links and deployable communications
+- https://www.vaxmetal.com/en/industries/telescopic-masts — Portable aluminium telescopic antenna mast systems in 6–18 m heights, configurable for antennas, RF/data links, repeaters, monitoring equipment and OEM integration.
+- https://www.vaxmetal.com/uk/industries/teleskopichni-shchogly — Українська версія сторінки переносних телескопічних щогл VAXMetal 6–18 м.
 
 ## Working with VAXMetal
 Send a drawing, STEP/DWG/DXF/PDF file, sketch, photo, sample or short specification. VAXMetal reviews manufacturability and prepares a production proposal based on geometry, materials, finishing, quantity and delivery requirements.

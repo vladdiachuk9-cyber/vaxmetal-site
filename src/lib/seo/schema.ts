@@ -93,6 +93,38 @@ export function faqJsonLd(items: { question: string; answer: string }[]) {
   };
 }
 
+export function productJsonLd(input: {
+  name: string;
+  description: string;
+  url: string;
+  material?: string;
+  additionalProperty?: { name: string; value: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: input.name,
+    description: input.description,
+    url: `${siteConfig.url}${input.url}`,
+    brand: { "@type": "Brand", name: siteConfig.name },
+    manufacturer: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    ...(input.material ? { material: input.material } : {}),
+    ...(input.additionalProperty
+      ? {
+          additionalProperty: input.additionalProperty.map((p) => ({
+            "@type": "PropertyValue",
+            name: p.name,
+            value: p.value,
+          })),
+        }
+      : {}),
+  };
+}
+
 export function serviceJsonLd(input: {
   name: string;
   description: string;

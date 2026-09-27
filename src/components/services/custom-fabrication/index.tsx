@@ -1,7 +1,9 @@
 import { Breadcrumbs } from "@/components/content/breadcrumbs";
 import { siteConfig } from "@/lib/site-config";
+import { serviceJsonLd } from "@/lib/seo/schema";
 import type { Locale, ServiceContent } from "@/content/types";
 import { CustomFabHero } from "./hero";
+import { CustomFabKeyFacts } from "./key-facts";
 import { CustomFabIntro } from "./intro";
 import { CustomFabStartWith } from "./start-with";
 import { CustomFabExamples } from "./examples";
@@ -29,6 +31,18 @@ export function CustomFabricationPage({
   return (
     <>
       <PageViewBeacon event="custom_project_view" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            serviceJsonLd({
+              name: service.name[locale],
+              description: service.intro[locale],
+              url: `/${locale}/services/${service.slug[locale]}`,
+            })
+          ),
+        }}
+      />
       <Breadcrumbs
         items={[
           { name: siteConfig.name, href: "/" },
@@ -37,6 +51,7 @@ export function CustomFabricationPage({
         ]}
       />
       <CustomFabHero locale={locale} />
+      <CustomFabKeyFacts locale={locale} />
       <CustomFabIntro locale={locale} />
       <CustomFabStartWith locale={locale} />
       <CustomFabExamples locale={locale} />

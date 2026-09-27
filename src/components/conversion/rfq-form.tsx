@@ -6,6 +6,18 @@ import { UploadCloud, CheckCircle2, AlertCircle } from "lucide-react";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
+// WebMCP declarative annotation for the mast RFQ variant, per
+// 05_WEBMCP_FORM_SNIPPETS.html — additive attributes only; the form works
+// identically in browsers/agents that ignore them. Assigned to a typed
+// variable (rather than spread as an inline object literal) so TS's
+// excess-property check doesn't reject the non-standard attribute names on
+// the intrinsic <form> element.
+const mastWebmcpFormAttrs: Record<string, string> = {
+  toolname: "request_telescopic_mast_configuration",
+  tooldescription:
+    "Submit a B2B request to VAXMetal for a portable telescopic mast configuration and manufacturing RFQ based on required height, payload, application and quantity.",
+};
+
 export function RfqForm({ variant }: { variant?: "mast" }) {
   const t = useTranslations("estimator");
   const locale = useLocale();
@@ -60,7 +72,12 @@ export function RfqForm({ variant }: { variant?: "mast" }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-5 rounded-xl border border-border bg-white p-6 sm:p-8" noValidate>
+    <form
+      {...(isMast ? mastWebmcpFormAttrs : {})}
+      onSubmit={handleSubmit}
+      className="grid gap-5 rounded-xl border border-border bg-white p-6 sm:p-8"
+      noValidate
+    >
       {/* Honeypot — hidden from real users via CSS, not display:none, so bots that skip hidden fields still trip it */}
       <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden" aria-hidden="true">
         <label htmlFor="companyWebsite">Company Website</label>

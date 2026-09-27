@@ -17,6 +17,17 @@ function formatMb(bytes: number) {
   return (bytes / (1024 * 1024)).toFixed(1);
 }
 
+// WebMCP declarative annotation per 05_WEBMCP_FORM_SNIPPETS.html — additive
+// attributes only; the form works identically in browsers/agents that
+// ignore them. Assigned to a typed variable (rather than spread as an
+// inline object literal) so TS's excess-property check doesn't reject the
+// non-standard attribute names on the intrinsic <form> element.
+const webmcpFormAttrs: Record<string, string> = {
+  toolname: "request_custom_metal_fabrication_quote",
+  tooldescription:
+    "Submit a custom metal fabrication project to VAXMetal for engineering review and quotation from an idea, photo, sketch, sample, drawing or CAD file.",
+};
+
 export function CustomProjectForm({ locale }: { locale: Locale }) {
   const t = useTranslations("estimator");
   const router = useRouter();
@@ -137,6 +148,7 @@ export function CustomProjectForm({ locale }: { locale: Locale }) {
 
   return (
     <form
+      {...webmcpFormAttrs}
       id="custom-project-form"
       onSubmit={handleSubmit}
       onFocus={markStarted}
