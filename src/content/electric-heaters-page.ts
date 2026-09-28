@@ -4,6 +4,7 @@ export interface HeaterProductCard {
   name: string;
   title: Localized<string>;
   text: Localized<string>;
+  image: { src: string; alt: Localized<string> };
 }
 
 export interface HeaterAudience {
@@ -22,11 +23,15 @@ export interface HeaterFaqItem {
  * anti-drone-page.ts / telescopic-mast-page.ts. Copy is sourced from
  * VAXMetal_Electric_Heaters_and_AntiDrone_AI_SEO_FINAL's
  * 03_PAGE_CONTENT_UA.md / 04_PAGE_CONTENT_EN.md, product-family naming from
- * 09_NEUTRAL_NAMING_OPTIONS.md. No reference imagery from the package is
- * used on the live page — the supplied "sanitized" crops still contained
- * baked-in third-party marketing text and at least one competitor model
- * code, so the page ships as a clean text/icon-driven design instead, per
- * the package's own fallback instruction ("if no clean photo exists...").
+ * 09_NEUTRAL_NAMING_OPTIONS.md.
+ *
+ * Imagery: the first heater package's "sanitized" reference crops still
+ * contained baked-in third-party marketing text and a competitor model
+ * code, so the page shipped text/icon-only at first. A follow-up package
+ * (VAXMetal_Electric_Heaters_Reviewed_Page_And_Photos) supplied a reviewed,
+ * genuinely clean image set (no third-party branding/text) — hero +
+ * one photo per product family — now wired in below, alt text verbatim
+ * from that package's 03_ALT_TEXT_EN_UA.md.
  */
 export const electricHeatersPage = {
   hero: {
@@ -49,6 +54,13 @@ export const electricHeatersPage = {
       en: "Photo · sample · STEP · DWG · DXF · PDF",
       uk: "Фото · зразок · STEP · DWG · DXF · PDF",
     } satisfies Localized<string>,
+    image: {
+      src: "/images/industries/electric-heaters/hero-electric-heating-family-vaxmetal.png",
+      alt: {
+        en: "A family of electric heating products including a ceramic panel heater, a metal panel heater, a heated towel rail, and an industrial infrared heater.",
+        uk: "Лінійка електрообігрівачів: керамічна панель, металева панель, рушникосушка та промисловий інфрачервоний обігрівач.",
+      },
+    },
   },
 
   keyFacts: {
@@ -85,6 +97,13 @@ export const electricHeatersPage = {
           en: "Ceramic infrared heating panels. Wall-mounted and mobile electric panels with ceramic front surfaces. Dimensions, power, finish, mounting and control options can be adapted to the target product series.",
           uk: "Керамічні інфрачервоні нагрівальні панелі. Настінні та мобільні електричні панелі з керамічною лицьовою поверхнею. Конструкцію, габарити, потужність, колір, кріплення та варіант керування можна адаптувати під конкретну серію.",
         },
+        image: {
+          src: "/images/industries/electric-heaters/vaxtherm-ceramic.png",
+          alt: {
+            en: "Ceramic infrared heating panel with a light stone-like front surface in a modern interior.",
+            uk: "Керамічна інфрачервона панель з декоративною світлою поверхнею в сучасному інтер'єрі.",
+          },
+        },
       },
       {
         name: "VAXTherm Metal",
@@ -92,6 +111,13 @@ export const electricHeatersPage = {
         text: {
           en: "Metal infrared heating panels. Slim panel heaters in fabricated metal housings for residential, office and commercial applications. Different mounting formats, finishes and thermostat configurations can be considered.",
           uk: "Металеві інфрачервоні панелі. Тонкі панельні обігрівачі в металевому корпусі для житлових, офісних та комерційних приміщень. Можливі різні формати монтажу, фінішне покриття та терморегуляція.",
+        },
+        image: {
+          src: "/images/industries/electric-heaters/vaxtherm-metal.png",
+          alt: {
+            en: "Slim metal infrared heating panel in a clean residential interior.",
+            uk: "Тонка металева інфрачервона панель у сучасному житловому інтер'єрі.",
+          },
         },
       },
       {
@@ -101,6 +127,13 @@ export const electricHeatersPage = {
           en: "Glass and decorative heating panels. Electric heating panels with glass or decorative front surfaces for products where appearance and interior integration are part of the specification.",
           uk: "Скляні та декоративні нагрівальні панелі. Електричні нагрівальні панелі зі скляною або декоративною лицьовою частиною для проєктів, де важливий зовнішній вигляд виробу та інтеграція в інтер'єр.",
         },
+        image: {
+          src: "/images/industries/electric-heaters/vaxtherm-glass.png",
+          alt: {
+            en: "Glass-front electric heating panel with a glossy surface in a premium interior.",
+            uk: "Електрообігрівач зі скляною фронтальною панеллю у сучасному преміальному інтер'єрі.",
+          },
+        },
       },
       {
         name: "VAXTherm Hybrid",
@@ -108,6 +141,13 @@ export const electricHeatersPage = {
         text: {
           en: "Hybrid infrared + convection heaters. Heater constructions that combine infrared heating with a convection component for product lines that require faster air heating while retaining a panel format.",
           uk: "Гібридні ІЧ + конвекційні обігрівачі. Конструкції, що поєднують інфрачервоний нагрів із конвекційною складовою. Підходять для серій, де замовник хоче швидший прогрів повітря разом із панельним форм-фактором.",
+        },
+        image: {
+          src: "/images/industries/electric-heaters/vaxtherm-hybrid.png",
+          alt: {
+            en: "Hybrid infrared and convection heater with a deeper body and integrated ventilation openings.",
+            uk: "Гібридний інфрачервоний та конвекційний обігрівач із глибшим корпусом та вентиляційними отворами.",
+          },
         },
       },
       {
@@ -117,6 +157,13 @@ export const electricHeatersPage = {
           en: "Electric heated towel rails with ceramic or glass panels. Wall-mounted bathroom products combining a heating panel with metal towel bars. Geometry, rail count, materials and control configuration can be adapted for the program.",
           uk: "Електричні рушникосушки з керамічною або скляною панеллю. Настінні вироби для ванних кімнат, що поєднують нагрівальну панель із металевими рейками для рушників. Можлива адаптація геометрії, кількості рейок, матеріалів і керування.",
         },
+        image: {
+          src: "/images/industries/electric-heaters/vaxdry-ceramic-glass.png",
+          alt: {
+            en: "Electric heated towel rail combining a flat heating panel with horizontal towel bars in a modern bathroom.",
+            uk: "Електрична рушникосушка з плоскою нагрівальною панеллю та горизонтальними перекладинами у сучасній ванній кімнаті.",
+          },
+        },
       },
       {
         name: "VAXRay Industrial / Outdoor",
@@ -124,6 +171,13 @@ export const electricHeatersPage = {
         text: {
           en: "Industrial and outdoor infrared heaters. Higher-power suspended or wall-mounted solutions for workshops, warehouses, production areas, terraces, pavilions and other applications requiring local directional heating.",
           uk: "Промислові та зовнішні інфрачервоні обігрівачі. Потужніші підвісні або настінні рішення для майстерень, складів, виробничих приміщень, терас, павільйонів та інших зон, де потрібен локальний спрямований нагрів.",
+        },
+        image: {
+          src: "/images/industries/electric-heaters/vaxray-industrial-outdoor.png",
+          alt: {
+            en: "Suspended industrial infrared heater with a glowing heating element in a warehouse-style setting.",
+            uk: "Підвісний промисловий інфрачервоний обігрівач із світним нагрівальним елементом у просторі цехового типу.",
+          },
         },
       },
     ] satisfies HeaterProductCard[],
